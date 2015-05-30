@@ -5,7 +5,8 @@
 
 
     <title>Contact Form with Bootstrap, jQuery and Mandrill App</title>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/4.8.3/css/bootstrap-slider.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/css/bootstrap-formhelpers.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
@@ -27,68 +28,100 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Contact Us</legend>
+<legend><i class="fa fa-bed"></i> Contact Us</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="firstname">First Name</label>  
-  <div class="col-md-4">
-  <input id="firstname" name="firstname" type="text" placeholder="First Name" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="lastname">Last Name</label>  
-  <div class="col-md-4">
-  <input id="lastname" name="lastname" type="text" placeholder="Last Name" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">Contact Email</label>  
-  <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="something@example.com" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="churchname">Church Name</label>  
-  <div class="col-md-4">
-  <input id="churchname" name="churchname" type="text" placeholder="Church Name" class="form-control input-md">
-    
-  </div>
-</div>
-  
-<!-- Slider Wohoo -->
-<div class="form-group">
-    <label class="col-md-4 control-label" for="churchname">Rough Average Service Attendance</label> 
-  <div class="col-md-8">
-   <input id="attendance" type="text" data-slider-min="1000" data-slider-max="10000000" data-slider-step="5" class="form-control input-md"/>
-  </div>    
-</div>
-
-    <!-- Country -->
-    <script src='js/bootstrap-formhelpers.min.js'></script> 
-<div class="form-group">
-    <label class="col-md-4 control-label">Country</label>
-    <div class="col-md-4">
-        <select id="country" class="form-control bfh-countries" name="country" data-country="US"></select>
+    <div class="row">
+        <div class="col-xs-6">
+            
+            <label class="control-label" for="firstname">First Name</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="firstname" name="firstname" type="text" placeholder="First Name" class="form-control">
+                </div>
+        </div>
+        <div class="col-xs-6">
+            <label class="control-label" for="lastname">Last Name</label>
+            <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="lastname" name="lastname" type="text" placeholder="Last Name" class="form-control">
+            </div>
+        </div>
     </div>
-</div>    
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-6">
+            <label class="control-label" for="email">Contact Email</label>
+                        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="email" name="email" type="text" placeholder="something@example.com" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <label class="control-label" for="phonenumber">Contact Phone Number</label>
+                        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="phonenumber" name="phonenumber" type="text" placeholder="+(CountryCode) (Number)" class="form-control"> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-6">
+            <label class="control-label" for="churchname">Church Name</label>
+             </div>
+            <div class="col-xs-6">
+                <label class="control-label" for="attendance">Average Attendance</label>
+            </div>
+    </div>
+        <div class="row">
+            <div class="col-xs-6">
+                        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="churchname" name="churchname" type="text" placeholder="Church Name" class="form-control">
+            </div>
+            </div>
+       
+        <div class="col-xs-6">
+            <!-- Slider Wohoo -->
+                        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input id="attendance" type="text" data-slider-min="1000" data-slider-max="10000000" data-slider-step="5" class="form-control"></div>
+                                             <span class="help-block">Please give a <em>rough</em> estimate of your average attendance across all campuses on your main day of worship</span>  
+            
+            </div>
+ 
+        </div>
+    </div>   
+    
+    <!-- Country -->
+    <div class="form-group">
+        <label class="control-label">Country</label>
+                    <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+        <select id="country" class="form-control bfh-countries" name="country" data-country="US"></select>
+        </div>  
+    </div>
 
 <div class="form-group" id="lookup">
-    <label class="col-md-4 control-label" for="postcodeinput">Postcode</label>  
-  <input id="postcodeinput" name="postcodeinput" type="text" placeholder="SW1A 2AA" class="form-control input-md">
-        <div class="col-md-4">
-    <button id="query" name="query" class="btn btn-primary">Submit</button>
+    <div class="row">
+        <div class="col-xs-8">
+    <label class="control-label" for="postcodeinput">Postcode</label>  
+        </div>
     </div>
-  </div>
+<div class="row">
+    <div class="col-xs-8">
+<input id="postcodeinput" name="postcodeinput" type="text" placeholder="SW1A 2AA" class="form-control">
+        </div>
+<div class="col-xs-4">
+    <button id="query" name="query" class="btn btn-primary">Lookup</button>
+    </div> 
+    </div>
 </div>    
     
 <!-- Button -->
