@@ -78,7 +78,7 @@
                     <div class="col-md-6">
                         <ul class="media-list">
                             <li class="media">
-                                <i class="fa fa-3x fa-fw fa-user pull-left text-inverse"></i>
+                                <i class="fa fa-3x fa-fw fa-user pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Manage Families</h4>
                                     <p>Store an infinite number of attributes about a person, visually represent
@@ -86,7 +86,7 @@
                                 </div>
                             </li>
                             <li class="media">
-                                <i class="fa fa-3x fa-fw fa-group pull-left text-inverse"></i>
+                                <i class="fa fa-3x fa-fw fa-group pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Look After Groups</h4>
                                     <p>Track group attendence, enable visitors to find your groups on your website,
@@ -94,7 +94,7 @@
                                 </div>
                             </li>
                             <li class="media">
-                                <i class="fa fa-3x fa-check-square fa-fw pull-left text-inverse"></i>
+                                <i class="fa fa-3x fa-check-square fa-fw pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Check-In Your Kids</h4>
                                     <p>Keep track of attendence with check-in. It works on iOS, Windows, and
@@ -102,7 +102,7 @@
                                 </div>
                             </li>
                             <li class="media">
-                                <i class="-phone -square fa fa-3x fa-comments fa-fw pull-left text-inverse"></i>
+                                <i class="-phone -square fa fa-3x fa-comments fa-fw pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Communicate</h4>
                                     <p>Contact individuals via by SMS or email and add a touch of personality
@@ -115,7 +115,7 @@
                     <div class="col-md-6">
                         <ul class="media-list">
                             <li class="media">
-                                <i class="fa fa-3x fa-area-chart fa-fw icon pull-left text-inverse"></i>
+                                <i class="fa fa-3x fa-area-chart fa-fw icon pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Create Custom Reports</h4>
                                     <p>You're no longer restricted to fixed reports or no reports at all. Query
@@ -124,14 +124,14 @@
                                 </div>
                             </li>
                             <li class="media">
-                                <i class="-square fa fa-3x fa-fw fa-money icon pull-left text-inverse"></i>
+                                <i class="-square fa fa-3x fa-fw fa-money icon pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Track Your Finance</h4>
                                     <p>Take payments, record checks, and predict future giving.&nbsp;</p>
                                 </div>
                             </li>
                             <li class="media">
-                                <i class="fa fa-3x fa-fw fa-fw-square fa-html5 icon pull-left text-inverse"></i>
+                                <i class="fa fa-3x fa-fw fa-fw-square fa-html5 icon pull-left"></i>
                                 <div class="media-body">
                                     <h4 class="media-heading text-inverse">Power Your Website</h4>
                                     <p>Power your website with data from Rock to allow users to donate, manage
@@ -140,7 +140,7 @@
                             </li>
                             <ul class="media-list">
                                 <li class="media">
-                                    <i class="fa fa-3x fa-fw icon pull-left text-inverse fa-lock"></i>
+                                    <i class="fa fa-3x fa-fw fa-lock icon pull-left"></i>
                                     <div class="media-body">
                                         <h4 class="media-heading text-inverse">Secure Information</h4>
                                         <p>Keep confidential information secure with Rock's security roles which
@@ -154,7 +154,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <i class="animated animated fa fa-5x fa-gears faa-pulse faa-slow pull-left text-inverse"></i>
+                        <i class="animated animated fa fa-5x fa-gears faa-pulse faa-slow pull-left"></i>
                         <div class="media-body">
                             <h3 class="media-heading text-inverse">
                                 <b>Customise</b>
@@ -183,7 +183,6 @@
                         <div class="col-md-12">
                             <div class="well">
                                 <h3>We believe in generosity.</h3>
-                                <p></p>
                             </div>
                             <p class="lead">That's why we make all of our plugins available for free on
                                 <a href="#">Github</a>. They're free to download, install, and use. What's free now will be
@@ -195,63 +194,82 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12"></div>
-                </div>
-            </div>
             <div class="section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="section">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6"></div>
-                                        <div class="col-md-6"></div>
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group has-feedback">
+                                    <div class="col-sm-2">
+                                        <label for="inputEmail3" class="control-label">Name</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-fw fa-user text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Full Name">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="form-group has-feedback">
+                                    <div class="col-sm-2">
+                                        <label for="inputEmail3" class="control-label">Email</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-envelope-o fa-fw text-muted"></i>
+                                            </span>
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="something@example.com">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-10 col-sm-offset-2 text-left">
+                                        <a class="btn btn-success">Submit</a>
+                                        <a class="btn btn-warning">Add Info</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <footer class="section section-primary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1>Bricks and Mortar</h1>
+                                <p>Bricks and Mortar is a small studio running out of the East Midlands of
+                                    England with a passion for furthering the kingdom of God. &nbsp;Our mission
+                                    is to help churches utilise and leverage technology to better share the
+                                    gospel.</p>
+                                <span class="text" style="font-size:20px">Find us on Github</span>
+                                <a href="https://github.com/organizations/BricksandMortar/"><i class="fa fa-2x fa-fw fa-github" style="color:white"></i></a>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-6 hidden-sm hidden-xs">
+                                <h1>We build on Rock</h1>
+                                <p>
+                                    <a href="http://rockrms.com" style="color:white">Rock RMS</a>&nbsp;is a new, powerful, and
+                                    <b>free</b>&nbsp;church management system produced by the Spark Development
+                                    Network. We believe that Rock provides the best value in the church management
+                                    system scene.</p>
+                                <a href="https://twitter.com/TheRockRMS"><i class="fa fa-2x fa-fw fa-twitter" style="color:white"></i></a>
+                                <a href="https://www.facebook.com/TheRockRMS"><i class="fa fa-2x fa-facebook fa-fw" style="color:white"></i></a>
+                                <a href="https://github.com/SparkDevNetwork/Rock">
+                                <i class="fa fa-2x fa-fw fa-github" style="color:white"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </footer>
             </div>
-            <div class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12"></div>
-                    </div>
-                </div>
-            </div>
-            <footer class="section section-primary">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1>Bricks and Mortar</h1>
-                            <p>Bricks and Mortar is a small studio running out of the East Midlands of
-                                England with a passion for furthering the kingdom of God. &nbsp;Our mission
-                                is to help churches utilise and leverage technology to better share the
-                                gospel.</p>
-                            <span class="text" style="font-size:20px">Find us on Github</span>
-                            <a href="https://github.com/organizations/BricksandMortar/"><i class="fa fa-2x fa-fw fa-github" style="color:white"></i></a>
-                        </div>
-                        <!-- Col -->
-                        <div class="col-md-6 hidden-sm hidden-xs">
-                            <h1>We build on Rock</h1>
-                            <p>
-                                <a href="http://rockrms.com" style="color:white">Rock RMS</a>&nbsp;is a new, powerful, and
-                                <b>free</b>&nbsp;church management system produced by the Spark Development
-                                Network. We believe that Rock provides the best value in the church management
-                                system scene.</p>
-                            <a href="https://twitter.com/TheRockRMS"><i class="fa fa-2x fa-fw fa-twitter" style="color:white"></i></a>
-                            <a href="https://www.facebook.com/TheRockRMS"><i class="fa fa-2x fa-facebook fa-fw" style="color:white"></i></a>
-                            <a href="https://github.com/SparkDevNetwork/Rock">
-                                <i class="fa fa-2x fa-fw fa-github" style="color:white"></i>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </body>
 
