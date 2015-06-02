@@ -15,7 +15,7 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base : #000;
+@gray-base : #333;
 @gray-darker : lighten(@gray-base, 13.5%); // #222
 @gray-dark : lighten(@gray-base, 20%);   // #333
 @gray : lighten(@gray-base, 33.5%); // #555
@@ -23,9 +23,9 @@
 @gray-lighter : lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary : #d9534f;
-@brand-success : #5CB85C;
-@brand-info : #E6C873;
-@brand-warning : #367089;
+@brand-success : #4fd998;
+@brand-info : #4f90d9;
+@brand-warning : #E6C873;
 @brand-danger : #5B5EA0;
 
 //== Scaffolding
@@ -347,7 +347,7 @@
 @container-md : @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop : @container-desktop;
+@container-large-desktop : (1140px + @grid-gutter-width);
 //** For `@screen-lg-min` and up.
 @container-lg : @container-large-desktop;
 
@@ -866,7 +866,7 @@
 @hr-border : @gray-lighter;
 
 // Pingendo variables
-@section-spacing : 35px;
+@section-spacing : 38px;
 
 // Core variables and mixins
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/mixins.less";
