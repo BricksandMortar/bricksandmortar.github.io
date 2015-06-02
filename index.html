@@ -105,8 +105,8 @@
                                 <li class="media"></li>
                                 <li class="media">
                                     <span class="fa-stack fa-2x">
-                                        <i class="fa fa-square fa-stack-2x text-info"></i>
-                                        <i class="fa fa-stack-1x text-warning fa-exchange"></i>
+                                        <i class="fa fa-fw fa-square fa-stack-2x text-info"></i>
+                                        <i class="fa fa-fw fa-stack-1x text-warning fa-exchange"></i>
                                     </span>
                                     <div class="media-body">
                                         <h4 class="media-heading text-inverse">Process Engineering</h4>
@@ -121,8 +121,8 @@
                             <ul class="media-list">
                                 <li class="media">
                                     <span class="fa-stack fa-2x">
-                                        <i class="fa fa-square fa-stack-2x text-info"></i>
-                                        <i class="fa fa-pencil fa-stack-1x text-warning"></i>
+                                        <i class="fa fa-fw fa-square fa-stack-2x text-info"></i>
+                                        <i class="fa fa-fw fa-pencil fa-stack-1x text-warning"></i>
                                     </span>
                                     <div class="media-body">
                                         <h4 class="media-heading text-inverse">Project Planning &amp; Management</h4>
@@ -136,8 +136,8 @@
                         </div>
                         <div class="col-md-12">
                             <span class="fa-stack fa-2x">
-                                <i class="fa fa-square fa-stack-2x text-info"></i>
-                                <i class="fa fa-stack-1x text-warning fa-code"></i>
+                                <i class="fa fa-fw fa-square fa-stack-2x text-info"></i>
+                                <i class="fa fa-fw fa-stack-1x text-warning fa-code"></i>
                             </span>
                             <div class="media-body">
                                 <h4 class="media-heading text-inverse">Custom Development</h4>
@@ -196,28 +196,36 @@
                             <form class="form-horizontal" role="form">
                                 <div class="form-group has-feedback">
                                     <div class="col-sm-2">
-                                        <label for="inputEmail3" class="control-label text-inverse">Name</label>
+                                        <label for="name" class="control-label text-inverse">Name</label>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-fw fa-user"></i>
                                             </span>
-                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Full Name">
+                                            <input type="text" class="form-control" id="name" placeholder="Full Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <div class="col-sm-2">
-                                        <label for="inputEmail3" class="control-label text-inverse">Email</label>
+                                        <label for="email" class="control-label text-inverse">Email</label>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-envelope-o fa-fw"></i>
                                             </span>
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="something@example.com">
+                                            <input type="email" class="form-control" id="email" placeholder="something@example.com">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <label class="control-label" style="color:white">Message</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -243,7 +251,7 @@
                             </div>
                             <!-- Col -->
                             <div class="col-md-6 hidden-sm hidden-xs" style="background-color:">
-                                <h1>We build on Rock</h1>
+                                <h1>We build with Rock</h1>
                                 <p>
                                     <a href="http://rockrms.com" style="color:white">Rock RMS</a>&nbsp;is a new, powerful, and
                                     <b>free</b>&nbsp;church management system produced by the Spark Development
@@ -261,6 +269,52 @@
                     </div>
                 </footer>
             </div>
+        </div>
+        <div id="scripts">
+            <script>
+                jQuery(function($)  
+        {
+            $("#contact").submit(function()
+            {
+                var email = $("#email").val(); // get email field value
+                var name = $("#name").val(); // get name field value
+                var msg = $("#msg").val(); // get message field value
+                $.ajax(
+                {
+                    type: "POST",
+                    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                    data: {
+                        'key': '4iRPHcxltCiIoYlQ8WoyAA',
+                        'message': {
+                            'from_email': email,
+                            'from_name': name,
+                            'headers': {
+                                'Reply-To': email
+                            },
+                            'subject': 'Website Contact Form Submission',
+                            'text': msg,
+                            'to': [
+                            {
+                                'email': 'hello@bricksandmortar.com',
+                                'name': 'Arran France',
+                                'type': 'to'
+                            }]
+                        }
+                    }
+                })
+                .done(function(response) {
+                    alert('Your message has been sent. Thank you!'); // show success message
+                    $("#name").val(''); // reset field after successful submission
+                    $("#email").val(''); // reset field after successful submission
+                    $("#msg").val(''); // reset field after successful submission
+                })
+                .fail(function(response) {
+                    alert('Error sending message.');
+                });
+                return false; // prevent page refresh
+            });
+        });
+            </script>
         </div>
     </body>
 
