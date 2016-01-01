@@ -1,0 +1,163 @@
+@import "/bootstrap-3.3.6/less/bootstrap.less";
+
+@red: #E95F40;
+@red-darker : darken(@red, 5%);
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+}
+
+a {
+  color: #407ce9;
+  &:hover {
+    color: #407ce9;
+  }
+}
+
+.bs-docs-masthead {
+  padding-top:50px;
+  padding-bottom:40px;
+  .btn:hover {
+    color: #E8773E;
+  }
+  .version {
+    color: #fff;
+  }
+}
+.bs-docs-header {
+  h1, p {
+    margin-right:0px;
+  }
+}
+.bs-docs-sidebar .nav > li > a {
+  font-size:15px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+  font-size:14px;
+}
+.back-top-top {
+  font-size:13px;
+}
+.bs-docs-footer {
+  p {
+    color: #99979c;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+#content {
+  position:relative;
+}
+#content:after {
+  content:"";
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  height:50px;
+  width:30%;
+  background:linear-gradient(135deg,transparent 50px,white 50px);
+}
+
+.label {
+  border-radius: 10px;
+  background-color: #E95F40;
+}
+
+.reason {
+  margin-bottom: 30px;
+}
+
+.do {
+  margin-bottom: 20px;
+}
+
+.landing {
+  .fa {
+    color: #E99F40;
+  }
+
+  p {
+    margin-left: 4em;
+    margin-right: 4em;
+    padding-bottom: @padding-large-vertical;
+  }
+}
+
+.about-container {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 3em;
+  padding-top: 20px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.btn-outline:hover {
+  i {
+    color: #fff;
+  }
+}
+
+.landing {
+  .input-group-addon{
+  .fa {
+    color: #E95F40;
+  }
+}
+}
+
+.btn-primary {
+  background-color: @red;
+  border-color: @red-darker;
+  color: #fff;
+
+  &:hover, &:focus, &:active {
+    background-color: @red-darker;
+    border-color: darken(@red-darker, 5%)
+  }
+}
+
+.form-horizontal {
+  margin: 30px 0 30px 0;
+}
+
+.fa-twitter {
+  color: #2C77BA !important;
+}
+
+.gravatar {
+  margin-bottom: 20px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .landing {
+
+    p {
+      margin-left: 4em;
+      margin-right: 4em;
+      padding-bottom: @padding-xs-vertical;
+    }
+  }
+
+  .bio {
+    .text-right;
+  }
+
+  .gravatar {
+    margin: 0px 0px 0px 0px;
+  }
+  .twitter{
+    .text-left;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+ }
