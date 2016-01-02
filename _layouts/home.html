@@ -11,15 +11,15 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="{{site.github.url}}/assets/css/docs.min.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{site.github.url}}/assets/css/tooltipster.css" />
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
-  <script src="{{site.github.url}}/assets/js/submit.js"></script>
+
 </head>
 
 <body>
@@ -55,15 +55,22 @@
       {% for l in site.footerLinks %}
         <li><a href="{{l.url}}">{{l.title}}</a></li>
       {% endfor %}
+      {% assign sorted_pages = site.pages | sort:"name" %}
+      {% for p in sorted_pages %}
+        {% if p.hide != true and p.title !=  %}
+          <li {% if page.title == p.title %}class="active"{% endif %}>
+            <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
       </ul>
-      <p><a href="http://bricksandmortarstudio.com">This Bricks and Mortar Studio</a> website has been made with much <span style="color:#E96040;">&#9829;</span> and is licensed under <a href="{{site.licenseUrl}}" target="_blank">{{site.license}}</a>.</p>
+      <p class="license">This site is <a href="https://github.com/BricksandMortar/bricksandmortar.github.io">open source</a> and is licensed under <a href="{{site.licenseUrl}}" target="_blank">{{site.license}}</a>.</p>
     </div>
   </footer>
 
 
   <!-- Async scripts
   =========================================== -->
-<script>
 
   {% if site.analytics.account and site.analytics.domain %}
   <script>

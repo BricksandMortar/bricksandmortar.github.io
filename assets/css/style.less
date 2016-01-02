@@ -3,8 +3,17 @@
 @red: #E95F40;
 @red-darker : darken(@red, 5%);
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, a:not([href]), a:not([href]):hover {
   color: #333333;
+  text-decoration: none;
+}
+
+//  {
+//   font-size: 16px;
+// }
+
+p:not(.lead):not(.license){
+  font-size: floor((@font-size-base * 1.15));
 }
 
 a {
@@ -59,9 +68,10 @@ a {
   background:linear-gradient(135deg,transparent 50px,white 50px);
 }
 
-.label {
+.rate {
   border-radius: 10px;
   background-color: #E95F40;
+  font-size: floor(@font-size-large)-1;
 }
 
 .reason {
@@ -120,12 +130,9 @@ a {
 }
 
 .form-horizontal {
-  margin: 30px 0 30px 0;
+  margin: 20px 0 30px 0;
 }
 
-.fa-twitter {
-  color: #2C77BA !important;
-}
 
 .gravatar {
   margin-bottom: 20px;
@@ -151,6 +158,10 @@ a {
   }
   .twitter{
     .text-left;
+    padding-top: @padding-small-vertical;
+    .fa-twitter {
+      color: #2C77BA !important;
+    }
   }
 }
 
