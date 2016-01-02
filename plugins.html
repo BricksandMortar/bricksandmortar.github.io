@@ -8,14 +8,15 @@ title: Plugins
 <section class="bs-docs-section" id="{{p.repo}}">
   <h1 id="first-level" >{{ p.name }} <small id="{{p.repo}}-version"></small></h1>
   <p id="{{p.repo}}--lastupdated"></p>
-  <p>{{ p.description }}</p>
-  <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
+  <p>{{ p.description }} <br/> <a href="{{site.github.url}}/{{p.repo}}">Learn More</a></p>
   {% if p.rockstore %}
-  <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+  <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
   {% endif %}
-  <h2>Changelog</h2>
+  <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+  <div id="{{p.repo}}-changelogcontainer">
   <p id="{{p.repo}}-changedate"></p>
   <div id="{{p.repo}}-change"></div>
+</div>
 </section>
 {% endfor %}
 
@@ -36,8 +37,8 @@ title: Plugins
           $('#'+repo+'-version').append(releasedata[0].name);
           $('#'+repo+'-release').attr('href', releasedata[0].html_url);
           $('#'+repo+'-lastupdated').append(data[i].updated_at);
-          console.log(moment(releasedata[0].published_at, moment.ISO_8601));
           $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
+          $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog</h2>');
           var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
           $('#'+repo+'-change').append(html);
         });
