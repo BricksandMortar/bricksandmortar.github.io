@@ -11,20 +11,17 @@ headerLinks:
 
 # list if additional links on the footer
 footerLinks:
-  - title: <i class="fa fa-github"></i> Visit Our GitHub
+  - title: <i class="fa fa-github"></i> GitHub
     url: https://github.com/BricksandMortar/
-  - title: Shoulder the Boulder
-    url: http://shouldertheboulder.com
 
 # google analytics
 analytics:
   account:
   domain:
 
-# github buttons
+# github
 github:
   user: BricksandMortar
-  repo: IdealPostcodes
 
 jekyll-mentions:
   base_url: https://twitter.com

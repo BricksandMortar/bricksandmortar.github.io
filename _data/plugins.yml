@@ -1,0 +1,4 @@
+  - name: Test
+    repo: IdealPostcodes
+    rockstore: https://github.com/BricksandMortar/
+    description: Accurate UK Address Verification

@@ -1,0 +1,50 @@
+---
+layout: default
+title: Plugins
+---
+
+{% for p in site.data.plugins %}
+<!-- wrap each main section with "bs-docs-section" class -->
+<section class="bs-docs-section" id="{{p.repo}}">
+  <h1 id="first-level" >{{ p.name }} <small id="{{p.repo}}-version"></small></h1>
+  <p id="{{p.repo}}--lastupdated"></p>
+  <p>{{ p.description }}</p>
+  <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
+  {% if p.rockstore %}
+  <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+  {% endif %}
+  <h2>Changelog</h2>
+  <p id="{{p.repo}}-changedate"></p>
+  <div id="{{p.repo}}-change"></div>
+</section>
+{% endfor %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script>
+(function() {
+  var api = "https://api.github.com/orgs/BricksandMortar/repos";
+  $.getJSON( api)
+  .done(function( data ) {
+    var i = 0;
+    $(data).each(function() {
+      if($('#'+this.name).length ) {
+        (function(i) {
+        $.getJSON( 'https://api.github.com/repos/BricksandMortar/'+data[i].name+'/releases')
+        .done(function( releasedata ) {
+          repo = data[i].name;
+          $('#'+repo+'-version').append(releasedata[0].name);
+          $('#'+repo+'-release').attr('href', releasedata[0].html_url);
+          $('#'+repo+'-lastupdated').append(data[i].updated_at);
+          console.log(moment(releasedata[0].published_at, moment.ISO_8601));
+          $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
+          var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
+          $('#'+repo+'-change').append(html);
+        });
+      })(i);
+}
+  i++;
+    });
+  });
+})();
+</script>
