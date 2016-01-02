@@ -7,7 +7,7 @@ description: Helping churches getting up and running on Rock RMS
   <div class="col-md-offset-1 col-md-10 reason">
     <h2>Generosity</h2>
     <p class="lead">We believe that having a kickass church infrastructure shouldn't have to cost a pound of flesh.</p>
-    <p>In fact we think it should be as cheap as you can afford. That's why all of our plugins are available for nothing, as free as the air you breathe, on Github as well as for purchase on the Rock Store. In fact generosity is such a driving fact in the way we do business we give <strong>50%</strong> of our net-income to the <a href="http://www.sparkdevelopmentnetwork.org/">Spark Development Network</a> to fund the development of Rock. Oh and our <a href="#do">rates</a> are pretty good too.</p>
+    <p>In fact we think it should be as cheap as you can afford. That's why all of our plugins are available for nothing, as free as the air you breathe, on Github as well as for purchase on the Rock Store. In fact generosity is such a driving fact in the way we do business we give <strong>50%</strong> of our net-income to the <a href="http://www.sparkdevelopmentnetwork.org/">Spark Development Network</a> to fund the development of Rock. Oh and our <a id='rateslink' href="#do">rates</a> are pretty good too.</p>
     <a href="{{site.github.url}}/documentation.html" class="btn btn-outline btn-md">See How We Don't Make Money</a>
   </div>
   <div class="col-md-offset-1 col-md-10 reason">
@@ -31,11 +31,11 @@ description: Helping churches getting up and running on Rock RMS
 <div class="col-md-6 do">
   <i class="fa fa-comments fa-3x"></i>
     <h3>Consultancy</h3>
-    <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts" class="tooltip" title="This is my link's tooltip message!">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
+    <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
 </div>
 <div class="col-md-offset-2 col-md-8 do">
   <i class="fa fa-star fa-3x"></i>
-  <h3>Our Promises</h3>
+  <h3><a id="rates">Our Promises</a></h3>
   <p>We promise that if we don't feel like a project is a fit for us we won't waste your time, or ours. We don't charge for initial conversations and we won't charge five minute jobs. We promise to be affordable (in real terms) and we promise to be transparent every step of the way.</p>
   <p class="lead">Our typical rate is <br />
     <span class="label label-default rate">£10 / $15 per hour</span></p>
@@ -98,8 +98,8 @@ description: Helping churches getting up and running on Rock RMS
         <p class="lead">I'm <a href="https://arranfrance.com">Arran</a> and I'm the one-man 'team' behind Bricks and Mortar.</p>
   </div>
   <div class="col-md-4 col-sm-push-8">
-    <div class="col-sm-12 gravatar-container">
-      <img class="img-responsive img-circle center-block gravatar" src="http://gravatar.com/avatar/646c698b580eb0ee44a7e4a55c33aaec" />
+    <div class="col-sm-12 gravatar-container ">
+      <img class="img-responsive img-circle gravatar center-block" src="http://gravatar.com/avatar/646c698b580eb0ee44a7e4a55c33aaec" />
     </div>
     <div class="col-sm-12 twitter">
         <i class="fa fa-twitter fa-lg"></i>@arranf
@@ -115,3 +115,13 @@ description: Helping churches getting up and running on Rock RMS
 
 
 </div>
+
+<script>
+$( document ).ready(function() {
+    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
+    if (isMobile.matches) {
+        $('#rateslink').attr('href', '#rates');
+    }
+ });
+ </script>
