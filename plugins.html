@@ -1,8 +1,20 @@
 ---
 layout: default
-title: Plugins
-description: We believe in generosity. That's why we make all of our plugins available for free on Github.<br /> They're free to download, install, and use.
+title: Our Plugins
+description: Open Source
 ---
+{% contentfor top %}
+<div class="row">
+  <div class="col-md-offset-1 col-md-10 reason">
+    <h2>Generosity</h2>
+    <p class="lead">Free now and free tomorrow.</p>
+    <p>We understand that not all churches have an IT budget, or even an IT team. We also understand that sometimes the churches most that most need the tools are the churches that work with some of the poorest communities. That's why we offer our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
+    <a href="{{site.github.url}}/finance.html" class="btn btn-outline btn-md">Check Out Our Reasons to Buy</a>
+  </div>
+</div>
+{% endcontentfor %}
+
+{% contentfor main %}
 {% for p in site.data.plugins %}
 <div class="row">
   <div class="col-md-12">
@@ -44,6 +56,7 @@ description: We believe in generosity. That's why we make all of our plugins ava
   </section>
   </div>
 </div>
+<hr />
 {% endfor %}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
@@ -59,14 +72,14 @@ description: We believe in generosity. That's why we make all of our plugins ava
         (function(i) {
         $.getJSON( 'https://api.github.com/repos/BricksandMortar/'+data[i].name+'/releases')
         .done(function( releasedata ) {
-          repo = data[i].name;
           if (releasedata.length)
           {
+            repo = data[i].name;
             $('#'+repo+'-lastupdated').append(data[i].updated_at);
-            $('#'+repo+'-version').append(releasedata[0].name);
             $('#'+repo+'-release').attr('href', releasedata[0].html_url);
             $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
-            $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog</h2>');
+            $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog<small id="{{p.repo}}-version"></small></h2>');
+            $('#'+repo+'-version').append(releasedata[0].name);
             var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
             $('#'+repo+'-changelogcontainer').append(html);
           }
@@ -78,3 +91,4 @@ description: We believe in generosity. That's why we make all of our plugins ava
   });
 })();
 </script>
+{% endcontentfor %}

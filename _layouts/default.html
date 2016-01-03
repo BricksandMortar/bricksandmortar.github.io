@@ -23,42 +23,12 @@
 </head>
 
 <body>
+
+
   <!-- Main navigation
   =========================================== -->
-  <header class="navbar navbar-static-top bs-docs-nav" id="top">
-    <div class="container">
-      <div class="navbar-header" role="banner">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{site.github.url}}/index.html">{{site.name}}</a>
-      </div>
-      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav">
-        {% assign sorted_pages = site.pages | sort:"name" %}
-        {% for p in sorted_pages %}
-          {% if p.download != true and p.hide != true and p.title !=  %}
-          <li {% if page.title == p.title %}class="active"{% endif %}>
-            <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a id="github-repo" href="https://https://github.com/{{site.github.user}}/{{site.github.repo}}">Github</a>
-            </li>
-        {% for p in site.headerLinks %}
-          <li>
-            <a href="{{p.url}}">{{p.title}}</a>
-          </li>
-        {% endfor %}
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <a href="{{site.github.ur}}/index.html" class="back-arrow"><i class='fa fa-arrow-left fa-2x'></i></a>
   </header>
 
 
@@ -74,17 +44,27 @@
     </div>
   </div>
 
+  <div class="container content">
+    <div class="row">
+      <!-- Content
+      =========================================== -->
+      <div class="col-md-12 text-center landing">
+        {% contentblock top %}
+      </div>
+    </div>
+  </div>
+
   <div class="container bs-docs-container">
     <div class="row">
       <!-- Content
       =========================================== -->
-      <div class="col-md-9" role="main">
-        {{content}}
+      <div class="col-md-10" role="main">
+        {% contentblock main %}
       </div>
 
       <!-- Page navigation
       =========================================== -->
-      <div class="col-md-3" role="complementary">
+      <div class="col-md-2" role="complementary">
         <div class="bs-docs-sidebar hidden-print">
           <ul class="nav bs-docs-sidenav">
           </ul>

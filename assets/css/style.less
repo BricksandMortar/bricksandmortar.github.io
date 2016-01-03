@@ -139,8 +139,27 @@ a {
   color: #2C77BA !important;
 }
 
+.twitter {
+  padding-bottom: @padding-small-vertical;
+}
+
 .plugin-section {
   margin-top: 20px;
+}
+
+.back-arrow {
+  color: black;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    color: #555;
+    text-decoration: none;
+  }
+  i {
+    position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 100;
+}
 }
 
 /* Small devices (tablets, 768px and up) */
