@@ -3,18 +3,6 @@ layout: default
 title: Our Plugins
 description: Open Source
 ---
-{% contentfor top %}
-<div class="row">
-  <div class="col-md-offset-1 col-md-10 reason">
-    <h2>Generosity</h2>
-    <p class="lead">Free now and free tomorrow.</p>
-    <p>We understand that not all churches have an IT budget, or even an IT team. We also understand that sometimes the churches most that most need the tools are the churches that work with some of the poorest communities. That's why we offer our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
-    <a href="{{site.github.url}}/finance.html" class="btn btn-outline btn-md">Check Out Our Reasons to Buy</a>
-  </div>
-</div>
-{% endcontentfor %}
-
-{% contentfor main %}
 {% for p in site.data.plugins %}
 <div class="row">
   <div class="col-md-12">
@@ -91,4 +79,3 @@ description: Open Source
   });
 })();
 </script>
-{% endcontentfor %}
