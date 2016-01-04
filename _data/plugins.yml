@@ -2,9 +2,12 @@
     icon:
     repo: IdealPostcodes
     rockstore: https://github.com/BricksandMortar/
+    strapline:
     description: Accurate UK Address Verification
   - name: Slack Integration
     icon: fa-slack
+    rockstore:
+    strapline:
     image: false
     repo: Slack
     description: Slack integration including authentication, workflow actions, an invite block, and more.
