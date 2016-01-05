@@ -1,81 +1,138 @@
 ---
-layout: default
-title: Our Plugins
-description: Open Source
+layout: plugins
+title: Plugins
 ---
-{% for p in site.data.plugins %}
-<div class="row">
-  <div class="col-md-12">
-    <section class="bs-docs-section plugin-section" id="{{p.repo}}">
-      <div class="row">
-        {% if p.icon %}
-        <div class="col-md-1">
-            {% if p.image %}
-              <img src="{{site.github.url}}/assets/images/plugins/{{p.icon}}" class="img-responsive" />
-            {% else %}
-              <h1><i class="fa {{p.icon}} fa-fw fa-lg"></i></h1>
-          {% endif %}
-        </div>
-      {% endif %}
-        <div class="col-md-11">
-        <h1 id="first-level" >{{ p.name }}
-          <small id="{{p.repo}}-version"></small>
-        </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p id="{{p.repo}}--lastupdated"></p>
-          <p>{{ p.description }} <br/>
-          <a href="{{site.github.url}}/{{p.repo}}">Learn More</a></p>
-        </div>
-        <div class="col-md-12">
-          {% if p.rockstore %}
-            <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
-          {% endif %}
-          <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"  id="{{p.repo}}-changelogcontainer">
-          <p id="{{p.repo}}-changedate"></p>
-        </div>
-      </div>
-  </section>
+<div class="container content">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h2>Our Take on Free</h2>
+    </div>
+    <div class="col-md-2 mobile-banner">
+      <p class="lead pad">Blah blah blah</p>
+    </div>
+    <div class="col-md-12 reason">
+      <p>We understand that not all churches have an IT budget, or even an IT team. We also understand that sometimes the churches most that most need the tools are the churches that work with some of the poorest communities. That's why we offer our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
+    </div>
   </div>
-</div>
-<hr />
-{% endfor %}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-<script>
-(function() {
-  var api = "https://api.github.com/orgs/BricksandMortar/repos";
-  $.getJSON( api)
-  .done(function( data ) {
-    var i = 0;
-    $(data).each(function() {
-      if($('#'+this.name).length ) {
-        (function(i) {
-        $.getJSON( 'https://api.github.com/repos/BricksandMortar/'+data[i].name+'/releases')
-        .done(function( releasedata ) {
-          if (releasedata.length)
-          {
-            repo = data[i].name;
-            $('#'+repo+'-lastupdated').append(data[i].updated_at);
-            $('#'+repo+'-release').attr('href', releasedata[0].html_url);
-            $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
-            $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog<small id="{{p.repo}}-version"></small></h2>');
-            $('#'+repo+'-version').append(releasedata[0].name);
-            var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
-            $('#'+repo+'-changelogcontainer').append(html);
+  <div class="row">
+    <div class="col-md-12">
+      <h1><a id="do">What We Do</a></h1>
+    </div>
+    <div class="col-md-12">
+        
+    </div>
+    <div class="col-md-4 do">
+      <i class="fa fa-code-fork fa-3x"></i>
+      <h3>Custom Development</h3>
+      <p>We produce plugins for sale in the Rock Store ranging from Slack integration to custom communication components. In addition, if you've got a need that isn't quite met by Rock or any existing plugins on the market we may just be the <strike>droids</strike> help you're looking for.</p>
+    </div>
+    <div class="col-md-4 do">
+      <i class="fa fa-comments fa-3x"></i>
+      <h3>Consultancy</h3>
+      <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
+    </div>
+    <div class="col-md-offset-4 col-md-8 do">
+      <i class="fa fa-star fa-3x"></i>
+      <h3><a id="rates">Our Promises</a></h3>
+      <p>We promise that if we don't feel like a project is a fit for us we won't waste your time, or ours. We don't charge for initial conversations and we won't charge five minute jobs. We promise to be affordable (in real terms) and we promise to be transparent every step of the way.</p>
+    </div>
+
+  </div>
+
+  <div class="container bs-docs-container">
+    <div class="row">
+      <!-- Content
+      =========================================== -->
+      <div class="col-md-10" role="main">
+        {% for p in site.data.plugins %}
+        <div class="row">
+          <div class="col-md-12">
+            <section class="bs-docs-section plugin-section" id="{{p.repo}}">
+              <div class="row">
+                {% if p.icon %}
+                <div class="col-md-1">
+                  {% if p.image %}
+                  <img src="{{site.github.url}}/assets/images/plugins/{{p.icon}}" class="img-responsive" />
+                  {% else %}
+                  <h1><i class="fa {{p.icon}} fa-fw fa-lg"></i></h1>
+                  {% endif %}
+                </div>
+                {% endif %}
+                <div class="col-md-11">
+                  <h1 id="first-level" >{{ p.name }}
+                    <small id="{{p.repo}}-version"></small>
+                  </h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p id="{{p.repo}}--lastupdated"></p>
+                  <p>{{ p.description }} <br/>
+                    <a href="{{site.github.url}}/{{p.repo}}">Learn More</a></p>
+                  </div>
+                  <div class="col-md-12">
+                    {% if p.rockstore %}
+                    <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
+                    {% endif %}
+                    <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12"  id="{{p.repo}}-changelogcontainer">
+                    <p id="{{p.repo}}-changedate"></p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <hr />
+          {% endfor %}
+        </div>
+
+        <!-- Page navigation
+        =========================================== -->
+        <div class="col-md-2" role="complementary">
+          <div class="bs-docs-sidebar hidden-print">
+            <ul class="nav bs-docs-sidenav">
+            </ul>
+            <a class="back-to-top" href="#top">
+              <i class="fa fa-chevron-up"></i> Back to Top
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script>
+    (function() {
+      var api = "https://api.github.com/orgs/BricksandMortar/repos";
+      $.getJSON( api)
+      .done(function( data ) {
+        var i = 0;
+        $(data).each(function() {
+          if($('#'+this.name).length ) {
+            (function(i) {
+              $.getJSON( 'https://api.github.com/repos/BricksandMortar/'+data[i].name+'/releases')
+              .done(function( releasedata ) {
+                if (releasedata.length)
+                {
+                  repo = data[i].name;
+                  $('#'+repo+'-lastupdated').append(data[i].updated_at);
+                  $('#'+repo+'-release').attr('href', releasedata[0].html_url);
+                  $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
+                  $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog<small id="{{p.repo}}-version"></small></h2>');
+                  $('#'+repo+'-version').append(releasedata[0].name);
+                  var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
+                  $('#'+repo+'-changelogcontainer').append(html);
+                }
+              });
+            })(i);
           }
+          i++;
         });
-      })(i);
-}
-  i++;
-    });
-  });
-})();
-</script>
+      });
+    })();
+    </script>

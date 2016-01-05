@@ -27,8 +27,14 @@
 
   <!-- Main navigation
   =========================================== -->
-  <header>
-    <a href="{{site.github.ur}}/index.html" class="back-arrow"><i class='fa fa-arrow-left fa-2x'></i></a>
+  <header class="back-arrow">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+    <a href="{{site.github.ur}}/index.html" ><i class='fa fa-arrow-left fa-2x'></i></a>
+  </div>
+</div>
+</div>
   </header>
 
 
@@ -37,45 +43,16 @@
   <div class="bs-docs-masthead" id="content">
     <div class="container">
       <h1 class="home-title">{{page.title}}</h1>
+      {% if page.description %}
       <p class="lead">{{page.description}}</p>
+      {% endif %}
       {% if page.catch %}
       <p class="lead final">{{page.catch}}</p>
       {% endif %}
     </div>
   </div>
 
-  <div class="container content">
-    <div class="row">
-          <div class="col-md-offset-1 col-md-10 reason text-center landing">
-            <h2>Generosity</h2>
-            <p class="lead">Free now and free tomorrow.</p>
-            <p>We understand that not all churches have an IT budget, or even an IT team. We also understand that sometimes the churches most that most need the tools are the churches that work with some of the poorest communities. That's why we offer our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
-            <a href="{{site.github.url}}/finance.html" class="btn btn-outline btn-md">Check Out Our Reasons to Buy</a>
-          </div>
-    </div>
-  </div>
-
-  <div class="container bs-docs-container">
-    <div class="row">
-      <!-- Content
-      =========================================== -->
-      <div class="col-md-10" role="main">
-        {{ content }}
-      </div>
-
-      <!-- Page navigation
-      =========================================== -->
-      <div class="col-md-2" role="complementary">
-        <div class="bs-docs-sidebar hidden-print">
-          <ul class="nav bs-docs-sidenav">
-          </ul>
-          <a class="back-to-top" href="#top">
-            <i class="fa fa-chevron-up"></i> Back to Top
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ content }}
 
 
   <!-- Footer
