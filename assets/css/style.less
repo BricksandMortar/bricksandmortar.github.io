@@ -1,26 +1,26 @@
 @import "/bootstrap-3.3.6/less/bootstrap.less";
 
-@red: #E95F40;
-@red-darker : darken(@red, 5%);
+
+
 
 p, h1, h2, h3, h4, h5, h6, a:not([href]), a:not([href]):hover {
-  color: #333333;
+  color: @text;
   text-decoration: none;
 }
-
-//  {
-//   font-size: 16px;
-// }
 
 p:not(.lead):not(.license){
   font-size: floor((@font-size-base * 1.15));
 }
 
 a {
-  color: #407ce9;
+  color: @link;
   &:hover {
-    color: #407ce9;
+    color: @link;
   }
+}
+
+.lead {
+  margin-bottom: 0px;
 }
 
 .bs-docs-masthead {
@@ -28,9 +28,6 @@ a {
   padding-bottom:40px;
   .btn:hover {
     color: #E8773E;
-  }
-  .version {
-    color: #fff;
   }
 }
 .bs-docs-header {
@@ -52,25 +49,13 @@ a {
     color: #99979c;
   }
   a:hover {
-    color: #fff;
+    color: @text-contrast;
   }
-}
-#content {
-  position:relative;
-}
-#content:after {
-  content:"";
-  position:absolute;
-  bottom:0px;
-  right:0px;
-  height:50px;
-  width:30%;
-  background:linear-gradient(135deg,transparent 50px,white 50px);
 }
 
 .rate {
   border-radius: 10px;
-  background-color: #E95F40;
+  background-color: @red;
   font-size: floor(@font-size-large)-1;
 }
 
@@ -84,28 +69,18 @@ a {
 
 .landing {
   .fa {
-    color: #E99F40;
+    color: @orange;
   }
 
   .input-group-addon .fa{
     color: #999;
 }
-
-  p {
-    margin-left: 4em;
-    margin-right: 4em;
-    padding-bottom: @padding-large-vertical;
-  }
 }
 
 .about-container {
   border-top: 1px solid #e5e5e5;
   margin-top: 3em;
   padding-top: 20px;
-}
-
-.navbar {
-  margin-bottom: 0px;
 }
 
 .btn-outline:hover {
@@ -124,6 +99,33 @@ a {
     border-color: darken(@red-darker, 5%)
   }
 }
+
+.btn-outline {
+  color: @text;
+  background-color: transparent;
+  border-color: @orange-darker !important;
+  margin: 5px 0 0  0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff !important;
+    background-color: @orange;
+    border-color: @orange;
+  }
+}
+
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  &:hover,&:focus,:active {
+    color: @orange;
+    text-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
+
 
 .form-horizontal {
   margin: 20px 0 30px 0;
@@ -162,15 +164,65 @@ a {
 }
 }
 
+
+.mobile-banner {
+  background-color: @orange;
+    padding: 10px 0px 5px 10px;
+    margin-bottom: 10px;
+    p {
+        color: @text-contrast;
+      }
+}
+
+.mobile-banner-alt {
+  .mobile-banner;
+  background-color: @red;
+}
+
+.btn-mobile-primary {
+  .btn-primary;
+  color: @text-contrast;
+  background-color: @orange;
+  border-color: @orange-darker;
+  &:hover, &:active, &:focus {
+    background-color: @orange-darker;
+  }
+}
+
+.btn-mobile-secondary {
+  .btn-mobile-primary;
+    background-color: @red;
+    border-color: @red-darker;
+    &:hover, &:active, &:focus {
+      background-color: @red-darker;
+    }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   .landing {
-
     p {
       margin-left: 4em;
       margin-right: 4em;
-      padding-bottom: @padding-xs-vertical;
+      padding-bottom: @padding-small-vertical;
     }
+  }
+
+  .btn-mobile-primary, .btn-mobile-secondary {
+    .btn-outline;
+  }
+
+  .mobile-banner {
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 0;
+    p {
+      color: @text;
+    }
+  }
+
+  .mobile-banner-alt {
+    .mobile-banner;
   }
 
   .bio {

@@ -36,65 +36,10 @@ h4 code {
 }
 
 /* Outline button for use within the docs */
-.btn-outline {
-  color: #E8773E;
-  background-color: transparent;
-  border-color: #E99F40 !important;
-  margin: 5px 0 0  0;
-}
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active {
-  color: #fff !important;
-  background-color: #E99F40;
-  border-color: #E99F40;
-}
+
 
 /* Inverted outline button (white on dark) */
-.btn-outline-inverse {
-  color: #fff;
-  background-color: transparent;
-  border-color: #fff !important;
-}
-.btn-outline-inverse:hover,
-.btn-outline-inverse:focus,
-.btn-outline-inverse:active {
-  color: #E8773E;
-  text-shadow: none;
-  background-color: #fff;
-  border-color: #fff;
-}
 
-/* Bootstrap "B" icon */
-.bs-docs-booticon {
-  display: block;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-  cursor: default;
-  background-color: #E8773E;
-  border-radius: 15%;
-}
-.bs-docs-booticon-sm {
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  line-height: 28px;
-}
-.bs-docs-booticon-lg {
-  width: 144px;
-  height: 144px;
-  font-size: 108px;
-  line-height: 140px;
-}
-.bs-docs-booticon-inverse {
-  color: #E8773E;
-  background-color: #fff;
-}
-.bs-docs-booticon-outline {
-  background-color: transparent;
-  border: 1px solid #cdbfe3;
-}
 
 
 /*
@@ -121,43 +66,6 @@ h4 code {
   outline: none;
 }
 
-
-/*
- * Main navigation
- *
- * Turn the `.navbar` at the top of the docs purple.
- */
-
-.bs-docs-nav {
-  margin-bottom: 0;
-  background-color: #fff;
-  border-bottom: 0;
-}
-.bs-home-nav .bs-nav-b {
-  display: none;
-}
-.bs-docs-nav .navbar-brand,
-.bs-docs-nav .navbar-nav > li > a {
-  font-weight: 500;
-  color:#dd9719;
-}
-.bs-docs-nav .navbar-nav > li > a:hover,
-.bs-docs-nav .navbar-nav > .active > a,
-.bs-docs-nav .navbar-nav > .active > a:hover {
-  color: #dd9719;
-  background-color: #f9f9f9;
-}
-.bs-docs-nav .navbar-toggle .icon-bar {
-  background-color: #EA6E40;
-}
-.bs-docs-nav .navbar-header .navbar-toggle {
-  border-color: #fff;
-}
-.bs-docs-nav .navbar-header .navbar-toggle:hover,
-.bs-docs-nav .navbar-header .navbar-toggle:focus {
-  background-color: #f9f9f9;
-  border-color: #f9f9f9;
-}
 
 
 /*
