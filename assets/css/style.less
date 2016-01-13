@@ -83,20 +83,14 @@ a {
   padding-top: 20px;
 }
 
-.btn-outline:hover {
-  i {
-    color: #fff;
-  }
-}
-
 .btn-primary {
-  background-color: @red;
-  border-color: @red-darker;
-  color: #fff;
+  background-color: @red !important;
+  border-color: @red-darker !important;
+  color: #fff !important;
 
   &:hover, &:focus, &:active {
-    background-color: @red-darker;
-    border-color: darken(@red-darker, 5%)
+    background-color: @red-darker !important;
+    border-color: darken(@red-darker, 5%) !important;
   }
 }
 
@@ -109,8 +103,11 @@ a {
   &:focus,
   &:active {
     color: #fff !important;
-    background-color: @orange;
-    border-color: @orange;
+    background-color: @orange !important;
+    border-color: @orange !important;
+    i {
+      color: @text-contrast;
+    }
   }
 }
 
@@ -118,11 +115,11 @@ a {
   color: #fff;
   background-color: transparent;
   border-color: #fff;
-  &:hover,&:focus,:active {
-    color: @orange;
+  &:hover,&:focus,&:active {
+    color: @orange !important;
     text-shadow: none;
-    background-color: #fff;
-    border-color: #fff;
+    background-color: #fff !important;
+    border-color: #fff !important;
   }
 }
 
@@ -182,20 +179,20 @@ a {
 
 .btn-mobile-primary {
   .btn-primary;
-  color: @text-contrast;
-  background-color: @orange;
-  border-color: @orange-darker;
+  color: @text-contrast !important;
+  background-color: @orange !important;
+  border-color: @orange-darker !important;
   &:hover, &:active, &:focus {
-    background-color: @orange-darker;
+    background-color: @orange-darker !important;
   }
 }
 
 .btn-mobile-secondary {
   .btn-mobile-primary;
-    background-color: @red;
-    border-color: @red-darker;
+    background-color: @red !important;
+    border-color: @red-darker !important;
     &:hover, &:active, &:focus {
-      background-color: @red-darker;
+      background-color: @red-darker !important;
     }
 }
 
