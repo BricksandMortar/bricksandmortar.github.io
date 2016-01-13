@@ -30,9 +30,12 @@
       <h1 class="home-title">{{site.name}}</h1>
 
       <img src="{{site.github.url}}/assets/images/logo.svg" />
-      <p class="lead">Just like <em>every</em> other parachurch tech company we passionately believe that the church is most effective when the details are taken care of so the church can focus on its mission.</p>
-      <p class="lead final">So what makes us different?<br />
-        <strong>Pretty much everything else.</strong></p>
+      {% if page.description %}
+      <p class="lead">{{page.description}}</p>
+      {% endif %}
+      {% if page.catch %}
+      <p class="lead final">{{page.catch}}</p>
+      {% endif %}
     </div>
   </div>
 
