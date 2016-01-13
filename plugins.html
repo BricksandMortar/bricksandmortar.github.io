@@ -1,17 +1,20 @@
 ---
 layout: plugins
 title: Plugins
+description: We understand that not all churches have an IT budget.
+catch: That's why all of our plugins are available for <strong>free</strong>.
 ---
 <div class="container content">
   <div class="row text-center">
     <div class="col-md-12">
-      <h2>Our Take on Free</h2>
+      <h2>Our Take on Free </h2>
     </div>
-    <div class="col-md-2 mobile-banner">
-      <p class="lead pad">Blah blah blah</p>
+    <div class="col-md-12 mobile-banner">
+      <p class="lead pad text-center">feat. 'The Free Promise'</p>
     </div>
     <div class="col-md-12 reason">
-      <p>We understand that not all churches have an IT budget, or even an IT team. We also understand that sometimes the churches most that most need the tools are the churches that work with some of the poorest communities. That's why we offer our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
+      <p>Not all churches have an IT budget. Heck, some churches haven't even got an IT team. So if you're a lone volunteer at a church using Rock or belong to a church that's struggling to cover the rent this month - we understand. We offer all of our plugins on Github for free. They're free to download, install, and use. What's free now will be free tomorrow so there's no fear that we'll update a plugin and you'll be stuck on an older version or that a plugin will suddenly disappear. </p>
+      <p>If you're in a church that's a more financially secure then you're equally welcome to download our plugins and use them for free, but first take at our three compelling reasons to purchase.</p>
     </div>
   </div>
 
@@ -20,87 +23,83 @@ title: Plugins
       <h1><a id="do">Three Compelling Reasons to Buy</a></h1>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-group fa-3x"></i>
+      <i class="fa fa-group fa-3x" style="color:#E95F40"></i>
       <h3>You</h3>
       <p>We produce plugins for sale in the Rock Store ranging from Slack integration to custom communication components. In addition, if you've got a need that isn't quite met by Rock or any existing plugins on the market we may just be the <strike>droids</strike> help you're looking for.</p>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-user fa-3x"></i>
+      <i class="fa fa-user fa-3x" style="color:#E95F40"></i>
       <h3>Us</h3>
       <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-heart fa-3x"></i>
+      <i class="fa fa-heart fa-3x" style="color:#E95F40"></i>
       <h3><a id="rates">The Community</a></h3>
       <p>We promise that if we don't feel like a project is a fit for us we won't waste your time, or ours. We don't charge for initial conversations and we won't charge five minute jobs. We promise to be affordable (in real terms) and we promise to be transparent every step of the way.</p>
     </div>
-
   </div>
+
+
+</div>
 
   <div class="container bs-docs-container">
     <div class="row">
       <!-- Content
       =========================================== -->
-      <div class="col-xs-10" id="plugins" role="main">
-        {% for p in site.data.plugins %}
-        <div class="row">
-          <div class="col-md-12">
-            <section class="bs-docs-section plugin-section" id="{{p.repo}}">
-              <div class="row">
-                {% if p.icon %}
-                <div class="col-md-1">
-                  {% if p.image %}
-                  <img src="{{site.github.url}}/assets/images/plugins/{{p.icon}}" class="img-responsive" />
-                  {% else %}
-                  <h1><i class="fa {{p.icon}} fa-fw fa-lg"></i></h1>
+      <div class="col-md-12" id="plugins" role="main">
+        {% assign sortedPlugins = (site.data.plugins | sort: 'name') %}
+        {% for p in sortedPlugins %}
+          {% assign loopindex = forloop.index | modulo: 2 %}
+          {% if loopindex == 1 %}
+          <div class="row">
+          {% endif %}
+            <div class="col-md-6">
+              <section class="bs-docs-section plugin-section" id="{{p.repo}}">
+                  {% if p.image  %}
+                  <div class="col-xs-1">
+                    <img src="{{site.github.url}}/assets/images/plugins/{{p.icon}}" class="img-responsive" id="{{p.repo}}-image" />
+                  </div>
                   {% endif %}
-                </div>
-                {% endif %}
-                <div class="col-md-11">
-                  <h1 id="first-level" >{{ p.name }}
-                    <small id="{{p.repo}}-version"></small>
-                  </h1>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <p id="{{p.repo}}--lastupdated"></p>
-                  <p>{{ p.description }} <br/>
-                    <a href="{{site.github.url}}/{{p.repo}}">Learn More</a></p>
+                  <div class="col-xs-11">
+                    <h1 id="first-level" >
+                      {% if p.icon %}<i class="fa {{p.icon}} fa-fw fa-lg" id="{{p.repo}}-icon"></i>{% endif %}
+                      {{ p.name }}
+                      <small id="{{p.repo}}-version"></small>
+                    </h1>
                   </div>
-                  <div class="col-md-12">
-                    {% if p.rockstore %}
-                    <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
+                  <div class="col-xs-12">
+                    {% if p.strapline %}
+                    <p class="lead">{{p.strapline}}</p>
                     {% endif %}
-                    <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12"  id="{{p.repo}}-changelogcontainer">
-                    <p id="{{p.repo}}-changedate"></p>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-          <hr />
+                  <div class="col-xs-12">
+                    <p id="{{p.repo}}--lastupdated"></p>
+                    <p>{{ p.description }} <br/>
+                      <a href="{{site.github.url}}/{{p.repo}}">Learn More</a></p>
+                    </div>
+                    <div class="col-xs-12">
+                      {% if p.rockstore %}
+                      <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
+                      {% endif %}
+                      <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+                    </div>
+                    <div class="col-xs-12"  id="{{p.repo}}-changelogcontainer">
+                      <p id="{{p.repo}}-changedate"></p>
+                    </div>
+                </section>
+              </div>
+            {% if loopindex == 0 %}
+              </div>
+              <hr />
+            {% endif %}
           {% endfor %}
         </div>
-
-        <!-- Page navigation
-        =========================================== -->
-        <div class="col-xs-2" role="complementary">
-          <div class="bs-docs-sidebar hidden-print">
-            <ul class="nav bs-docs-sidenav">
-            </ul>
-            <a class="back-to-top" href="#plugins">
-              <i class="fa fa-chevron-up"></i> Back to Top
-            </a>
-          </div>
-        </div>
+        <!-- col -->
       </div>
-    </div>
+      <!-- row -->
   </div>
+  <!-- container -->
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
@@ -121,8 +120,11 @@ title: Plugins
                   $('#'+repo+'-lastupdated').append(data[i].updated_at);
                   $('#'+repo+'-release').attr('href', releasedata[0].html_url);
                   $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
-                  $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog<small id="{{p.repo}}-version"></small></h2>');
-                  $('#'+repo+'-version').append(releasedata[0].name);
+                  $('#'+repo+'-changelogcontainer').prepend('<h2>Changelog</h2>');
+                  if(releasedata[0].name)
+                    $('#'+repo+'-version').append(releasedata[0].name);
+                  else
+                    $('#'+repo+'-version').append(releasedata[0].tag_name.replace('v', 'Version '));
                   var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
                   $('#'+repo+'-changelogcontainer').append(html);
                 }
