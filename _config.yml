@@ -23,6 +23,12 @@ analytics:
 github:
   user: BricksandMortar
 
+collections:
+  plugins:
+    output: true
+    defaults:
+      image: false
+
 jekyll-mentions:
   base_url: https://twitter.com
 

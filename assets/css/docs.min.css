@@ -132,9 +132,13 @@ h4 code {
   color: #000;
 }
 .bs-docs-masthead .lead {
-  margin: 0 auto 30px;
+  margin: 0 auto;
   font-size: 20px;
   color: #000;
+}
+
+.bs-docs-masthead+.home .lead {
+  margin-bottom: 30px;
 }
 
 .bs-docs-masthead .lead+.final {
