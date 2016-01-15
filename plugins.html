@@ -22,20 +22,26 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
       <h1><a id="do">Three Compelling Reasons to Buy</a></h1>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-group fa-3x"></i>
+      <div class="do-icon">
+        <i class="fa fa-group fa-3x"></i>
+      </div>
       <h3>You</h3>
-      <p>We produce plugins for sale in the Rock Store ranging from Slack integration to custom communication components. In addition, if you've got a need that isn't quite met by Rock or any existing plugins on the market we may just be the <strike>droids</strike> help you're looking for.</p>
+      <p>Purchasing on the Rock Store takes aways the trouble of installing and keeping your plugin up to date. Why bother with FTP when you can automatically keep in sync with the updates as they come?</p>
     </div>
-    <div class="col-md-4 do">
 
-      <img src="{{site.github.url}}/assets/images/logo-icon.svg" style="height: 50%;"/>
+    <div class="col-md-4 do">
+      <div class="do-icon">
+        <img src="{{site.github.url}}/assets/images/logo-icon.svg"/>
+      </div>
       <h3>Us</h3>
-      <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
+      <p>Bricks and Mortar is a <a href="{{site.github.url}}/index.html#me">one man</a> endeavour. Purchasing plugins on the Rock Store helps pay for things like my rent, test servers, and for me to not have a job so I can contribute to Rock in the time I'm not studying.</p>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-heart fa-3x" style="color:#E95F40"></i>
+      <div class="do-icon">
+        <i class="fa fa-heart fa-3x" style="color:#E95F40"></i>
+      </div>
       <h3><a id="rates">The Community</a></h3>
-      <p>We promise that if we don't feel like a project is a fit for us we won't waste your time, or ours. We don't charge for initial conversations and we won't charge five minute jobs. We promise to be affordable (in real terms) and we promise to be transparent every step of the way.</p>
+      <p>50% of all of Bricks and Mortar revenue goes to the Spark Development Network to fund the continual development of Rock, by purchasing you're directly supporting the folks who make Rock a reality.</p>
     </div>
   </div>
 
@@ -69,7 +75,6 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
                     {% endif %}
                   </div>
                   <div class="col-xs-12">
-                    <p id="{{p.repo}}--lastupdated"></p>
                     <p>{{ p.description }} <br/>
                       <a href="{{site.github.url}}{{p.url}}">Learn More</a></p>
                     </div>
@@ -78,9 +83,6 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
                       <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
                       {% endif %}
                       <a id="{{p.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
-                    </div>
-                    <div class="col-xs-12"  id="{{p.repo}}-changelogcontainer">
-                      <p id="{{p.repo}}-changedate"></p>
                     </div>
                 </section>
               </div>
@@ -103,10 +105,11 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
             (function(i) {
               $.getJSON( 'https://api.github.com/repos/BricksandMortar/'+data[i].name+'/releases')
               .done(function( releasedata ) {
-                if (releasedata.length) {
-                  repo = data[i].name;
+                repo = data[i].name;
+                if (releasedata.length)
                   $('#'+repo+'-release').attr('href', releasedata[0].html_url);
-                }
+                else
+                  $('#'+repo+'-release').attr('href', 'https://github.com/BricksandMortar/'+data[i].name);
               });
             })(i);
           }
@@ -114,4 +117,18 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
         });
       });
     })();
+    </script>
+
+    <script>
+    var isMobile = $(window).width() < 760;
+    if (!isMobile){
+      height = 0;
+      $('.do-icon').each(function () {
+        if (height < $(this).height())
+          height = $(this).height();
+      })
+      $('.do-icon').each(function() {
+        $(this).css("height", (height) + "px");
+      })
+    }
     </script>

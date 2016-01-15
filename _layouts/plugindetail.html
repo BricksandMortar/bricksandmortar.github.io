@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{site.name}} | {{page.title}}</title>
+  <title>{{page.name}} | {{site.name}}</title>
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -41,53 +41,38 @@
   =========================================== -->
   <div class="bs-docs-masthead" id="content">
     <div class="container">
-      <h1 class="home-title">{{page.name}}</h1>
-      {% if page.strapline %}
-      <h1 class="lead">{{page.strapline}}</p>
+          <h1 class="home-title">{{page.name}}</h1>
+          {% if page.strapline %}
+          <h1 class="lead">{{page.strapline}}</h1>
+          {% endif %}
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-offset-1 col-md-10  text-center">
+      <h2 class="text-center">Give It a Go
+      </h2>
+      {% if page.rockstore %}
+        <a href="{{page.rockstore}}" class="btn btn-primary btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
       {% endif %}
+      {% if page.documentation %}
+        <a href="{{page.documentation}}" class="btn btn-mobile-secondary btn-md"><i class="fa fa-book fa-lg"</i> Documentation</a>
+      {% endif %}    
+      <a id="release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
+    </div>
+    <div class="col-md-offset-1 col-md-10 col-xs-12 text-center">
+      <h2>About</h2>
+      <p>{{page.description}}</p>
+      <hr \>
+    </div>
+
+    <div class="col-xs-12 col-md-offset-1 col-md-10 text-center" id="changelogcontainer">
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-12 text-center center-block">
-        <section class="bs-docs-section plugin-section">
-            {% if page.image or page.icon  %}
-            <div class="col-xs-1">
-              {% if page.icon %}
-              <h2><i class="fa {{page.icon}} fa-fw fa-lg" id="{{page.repo}}-icon"></i></h2>
-              {% endif %}
-              {% if page.image %}
-              <img src="{{site.github.url}}/assets/images/plugins/{{page.icon}}" class="img-responsive" id="{{page.repo}}-image" />
-              {% endif %}
-            </div>
-            <div class="col-xs-11">
-            {% else %}
-            <div class="col-xs-12">
-            {% endif %}
-              <h2 id="first-level" >{{ page.name }}</h2>
-            </div>
-            <div class="col-xs-12">
-              {% if page.strapline %}
-              <p class="lead">{{page.strapline}}</p>
-              {% endif %}
-            </div>
-            <div class="col-xs-12">
-              <p id="{{page.repo}}--lastupdated"></p>
-              <p>{{ page.description }}
-              </div>
-              <div class="col-xs-12">
-                {% if page.rockstore %}
-                <a href="" class="btn btn-danger btn-md"><i class="fa fa-download fa-lg"></i> Rock Store</a>
-                {% endif %}
-                <a id="{{page.repo}}-release" href="" class="btn btn-default btn-md"><i class="fa fa-github fa-lg"></i> Github</a>
-              </div>
-              <div class="col-xs-12"  id="{{p.repo}}-changelogcontainer">
-                <p id="{{page.repo}}-changedate"></p>
-              </div>
-          </section>
-      </div>
-    </div>
-
+</div>
+</div>
 
   <!-- Footer
   =========================================== -->
@@ -116,22 +101,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
   <script>
-  (function() {
-    var api = "https://api.github.com/orgs/BricksandMortar/repos";
+  $( document ).ready(function() {
+    var api = "https://api.github.com/repos/BricksandMortar/{{page.repo}}/releases";
     $.getJSON( api)
     .done(function( data ) {
       if (data.length)
       {
-        repo = data[i].name;
-        $('#'+repo+'-release').attr('href', releasedata[0].html_url);
-        $('#'+repo+'-changedate').append(moment(releasedata[0].published_at).fromNow());
-        $('#'+repo+'-changelogcontainer').prepend('<h3>Changelog<br /><small id="'+repo+'-version"></small></h3>');
-        if(releasedata[0].name)
-          $('#'+repo+'-version').append(releasedata[0].name);
-        else
-          $('#'+repo+'-version').append(releasedata[0].tag_name.replace('v', 'Version '));
-        var converter = new showdown.Converter(), html = converter.makeHtml(releasedata[0].body);
-        $('#'+repo+'-changelogcontainer').append(html);
+        $('#changelogcontainer').prepend('<h2>Changelog</h2>');
+        $('#release').attr('href', data[0].html_url);
+        contents = '';
+        for (i=0;i < data.length && i < 3; i++)
+        {
+          contents = contents + '<div class="col-xs-12 col-md-offset-1 col-md-10 versionlog" id="versioncontainer' + data[i].id + '"><p class="lead" id="version'+data[i].id+'">';
+          if(data[i].name)
+            contents = contents + data[i].name;
+          else
+            contents = contents + data[i].tag_name.replace('v', 'Version ');
+          contents = contents + '<br /><small id="changed' + data[i].id + '">' + moment(data[i].published_at).fromNow() + '</small></p>';
+          var converter = new showdown.Converter();
+          contents = contents + converter.makeHtml(data[i].body) + '</div>';
+        }
+        $('#changelogcontainer').append(contents);
       }
     });
   });
