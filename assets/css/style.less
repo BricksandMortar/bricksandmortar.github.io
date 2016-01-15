@@ -81,15 +81,17 @@ a {
 .btn-primary {
   background-color: @red !important;
   border-color: @red-darker !important;
+  outline-color: @red-darker !important;
   color: #fff !important;
 
   &:hover, &:focus, &:active {
     background-color: @red-darker !important;
     border-color: darken(@red-darker, 5%) !important;
+    outline-color: darken(@red-darker, 5%) !important;
   }
 }
 
-.btn-outline {
+.btn-outline-orange {
   color: @text;
   background-color: transparent;
   border-color: @orange-darker !important;
@@ -97,12 +99,23 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: #fff !important;
-    background-color: @orange !important;
-    border-color: @orange !important;
+    color: @text-contrast !important;
+    background-color: @orange-darker !important;
+    border-color: darken(@orange, 5%) !important;
     i {
       color: @text-contrast;
     }
+  }
+}
+
+.btn-outline-red {
+  .btn-outline-orange;
+  border-color: @red-darker !important;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @red-darker !important;
+    border-color: darken(@red-darker, 5%) !important;
   }
 }
 
@@ -157,6 +170,15 @@ a {
   left: 10px;
   z-index: 100;
 }
+.fa {
+  color: @orange;
+  border-color: @orange-darker;
+
+  &:hover, &:focus, &:active {
+    color: @orange-darker;
+    border-color: darken(@orange-darker, 5%);
+  }
+}
 }
 
 
@@ -180,18 +202,24 @@ a {
   color: @text-contrast !important;
   background-color: @orange !important;
   border-color: @orange-darker !important;
+  outline-color: @orange-darker !important;
   &:hover, &:active, &:focus {
     background-color: @orange-darker !important;
+    border-color: darken(@orange-darker, 5%) !important;
+    outline-color: darken(@orange-darker, 5%) !important;
   }
 }
 
 .btn-mobile-secondary {
-  .btn-mobile-primary;
-    background-color: @red !important;
-    border-color: @red-darker !important;
-    &:hover, &:active, &:focus {
-      background-color: @red-darker !important;
-    }
+  .btn-primary;
+    // background-color: @red !important;
+    // border-color: @red-darker !important;
+    // outline-color: @red-darker !important;
+    // &:hover, &:active, &:focus {
+    //   background-color: @red-darker !important;
+    //   border-color: darken(@red-darker, 5%) !important;
+    //   outline-color: darken(@red-darker, 5%) !important;
+    // }
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -204,8 +232,12 @@ a {
     }
   }
 
-  .btn-mobile-primary, .btn-mobile-secondary {
-    .btn-outline;
+  .btn-mobile-primary {
+    .btn-outline-orange;
+  }
+
+  .btn-mobile-secondary {
+    .btn-outline-red;
   }
 
   .mobile-banner {

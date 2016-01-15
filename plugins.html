@@ -22,12 +22,13 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
       <h1><a id="do">Three Compelling Reasons to Buy</a></h1>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-group fa-3x" style="color:#E95F40"></i>
+      <i class="fa fa-group fa-3x"></i>
       <h3>You</h3>
       <p>We produce plugins for sale in the Rock Store ranging from Slack integration to custom communication components. In addition, if you've got a need that isn't quite met by Rock or any existing plugins on the market we may just be the <strike>droids</strike> help you're looking for.</p>
     </div>
     <div class="col-md-4 do">
-      <i class="fa fa-user fa-3x" style="color:#E95F40"></i>
+
+      <img src="{{site.github.url}}/assets/images/logo-icon.svg" style="height: 50%;"/>
       <h3>Us</h3>
       <p>Figuring out where to start with Rock can be hard. We've been there since pre-1.0 and we gotten several <span id="tshirts">Rock t-shirts</span> along the way. Whether it be a conversation about whether Rock is right for you, initial setup, project planning, post-setup tweaks, advanced configuration, or any combination of buzzwords you can think of we'd like to see if we can help.</p>
     </div>
@@ -49,14 +50,9 @@ catch: That's why all of our plugins are available for <strong>free</strong>.
         {% for p in site.plugins %}
             <div class="col-md-12">
               <section class="bs-docs-section plugin-section" id="{{p.repo}}">
-                {% if p.image or p.icon  %}
-                <div class="col-xs-1">
-                  {% if p.icon %}
-                  <h2><i class="fa {{p.icon}} fa-fw fa-lg" id="{{p.repo}}-icon"></i></h2>
-                  {% endif %}
-                  {% if page.image %}
+                {% if p.image  %}
+                <div class="col-xs-1 pull-right">
                   <img src="{{site.github.url}}/assets/images/plugins/{{p.icon}}" class="img-responsive" id="{{p.repo}}-image" />
-                  {% endif %}
                 </div>
                 <div class="col-xs-11">
                 {% else %}

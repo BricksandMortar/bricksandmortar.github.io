@@ -12,8 +12,8 @@ catch: So what makes us different?<br /><strong>Pretty much everything else.</st
     <p class="lead">We believe that having a kickass church infrastructure shouldn't have to cost a pound of flesh.</p>
   </div>
   <div class="col-md-offset-1 col-md-10 reason">
-    <p>In fact we think it should be as cheap as you can afford. That's why all of our plugins are available for nothing, as free as the air you breathe, on Github as well as for purchase on the Rock Store. In fact generosity is such a driving fact in the way we do business we give <strong>50%</strong> of our net-income to the <a href="http://www.sparkdevelopmentnetwork.org/">Spark Development Network</a> to fund the development of Rock. Oh and our <a id='rateslink' href="#do">rates</a> are pretty good too.</p>
-    <a href="{{site.github.url}}/documentation.html" class="btn btn-mobile-primary btn-md">See How We Don't Make Money</a>
+    <p>In fact we think it should be as cheap as you can afford. That's why all of our plugins are available for nothing, as free as the air you breathe, on Github as well as for purchase on the Rock Store. In fact generosity is such a driving fact in the way we do business we give <strong>50%</strong> of our net-income to the <a href="http://www.sparkdevelopmentnetwork.org/">Spark Development Network</a> to fund the development of Rock. Oh and our <a class="rates" href="#do">rates</a> are pretty good too.</p>
+    <a href="#do" class="btn btn-mobile-primary btn-md rates">See How Much it Costs for Consultancy</a>
   </div>
 
   <div class="col-md-offset-1 col-md-10">
@@ -49,7 +49,7 @@ catch: So what makes us different?<br /><strong>Pretty much everything else.</st
     <p>We promise that if we don't feel like a project is a fit for us we won't waste your time, or ours. We don't charge for initial conversations and we won't charge five minute jobs. We promise to be affordable (in real terms) and we promise to be transparent every step of the way.</p>
     <p class="lead">Our typical rate is <br />
       <span class="label label-default rate">£10 / $15 per hour</span></p>
-      <a onclick="toggleForm();" id="formButton" class="btn btn-outline btn-lg interested">Okay, I'm interested.</a>
+      <a onclick="toggleForm();" id="formButton" class="btn btn-outline-orange btn-lg interested">Okay, I'm interested.</a>
 
     </div>
     <div class="col-md-offset-2 col-md-8">
@@ -131,7 +131,7 @@ catch: So what makes us different?<br /><strong>Pretty much everything else.</st
       var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
       if (isMobile.matches) {
-        $('#rateslink').attr('href', '#rates');
+        $('.rates').attr('href', '#rates');
       }
     });
     </script>
