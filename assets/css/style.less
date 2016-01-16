@@ -228,6 +228,19 @@ a {
     // }
 }
 
+.btn-mobile-white {
+  .btn-primary;
+  color: @text-contrast !important;
+  background-color: white !important;
+  border-color: darken(white, 5%) !important;
+  outline-color: darken(white, 5%) !important;
+  &:hover, &:active, &:focus {
+    background-color: darken(white, 5%) !important;
+    border-color: darken(darken(white, 5%), 5%) !important;
+    outline-color: darken(darken(white, 5%), 5%) !important;
+  }
+}
+
 .versionlog {
   padding-bottom: 20px;
 }
@@ -248,6 +261,10 @@ a {
 
   .btn-mobile-secondary {
     .btn-outline-red;
+  }
+
+  .buttons {
+    margin-top: 10px;
   }
 
   .mobile-banner {
