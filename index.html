@@ -133,7 +133,7 @@ catch: So what makes us different?<br /><strong>Pretty much everything else.</st
       if (isMobile.matches) {
         $('.rates').attr('href', '#rates');
       }
-      $.getJSON( 'http://api.fixer.io/latest?base=GBP&symbols=USD')
+      $.getJSON( 'http://api.fixer.io/latest?base=GBP&symbols=USD&callback=?')
       .done(function( data ) {
         $('#usd-rate').text( (parseInt($('#gbp-rate').text())*data.rates.USD).toFixed(2))
       });
