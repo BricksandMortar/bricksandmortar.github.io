@@ -1600,9 +1600,9 @@ $jscomp.string.endsWith$install = function() {
         }
       }
       return -1;
-    }, ha = RegExp("[\\x20\\t\\r\\n\\f]+", "g"), U = RegExp("^[\\x20\\t\\r\\n\\f]+|((?:^|[^\\\\])(?:\\\\.)*)[\\x20\\t\\r\\n\\f]+$", "g"), ka = /^[\x20\t\r\n\f]*,[\x20\t\r\n\f]*/, la = /^[\x20\t\r\n\f]*([>+~]|[\x20\t\r\n\f])[\x20\t\r\n\f]*/, pa = RegExp("=[\\x20\\t\\r\\n\\f]*([^\\]'\"]*?)[\\x20\\t\\r\\n\\f]*\\]", "g"), qa = /:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/, 
-    ga = /^(?:\\.|[\w-]|[^\x00-\xa0])+$/, X = {ID:/^#((?:\\.|[\w-]|[^\x00-\xa0])+)/, CLASS:/^\.((?:\\.|[\w-]|[^\x00-\xa0])+)/, TAG:/^((?:\\.|[\w-]|[^\x00-\xa0])+|[*])/, ATTR:/^\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\]/, PSEUDO:/^:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/, 
-    CHILD:/^:(only|first|last|nth|nth-last)-(child|of-type)(?:\([\x20\t\r\n\f]*(even|odd|(([+-]|)(\d*)n|)[\x20\t\r\n\f]*(?:([+-]|)[\x20\t\r\n\f]*(\d+)|))[\x20\t\r\n\f]*\)|)/i, bool:/^(?:checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$/i, needsContext:/^[\x20\t\r\n\f]*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\([\x20\t\r\n\f]*((?:-\d)?\d*)[\x20\t\r\n\f]*\)|)(?=[^-]|$)/i}, ra = /^(?:input|select|textarea|button)$/i, sa = 
+    }, ha = RegExp("[\\x20\\t\\r\\n\\f]+", "g"), U = RegExp("^[\\x20\\t\\r\\n\\f]+|((?:^|[^\\\\])(?:\\\\.)*)[\\x20\\t\\r\\n\\f]+$", "g"), ka = /^[\x20\t\r\n\f]*,[\x20\t\r\n\f]*/, la = /^[\x20\t\r\n\f]*([>+~]|[\x20\t\r\n\f])[\x20\t\r\n\f]*/, pa = RegExp("=[\\x20\\t\\r\\n\\f]*([^\\]'\"]*?)[\\x20\\t\\r\\n\\f]*\\]", "g"), qa = /:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/,
+    ga = /^(?:\\.|[\w-]|[^\x00-\xa0])+$/, X = {ID:/^#((?:\\.|[\w-]|[^\x00-\xa0])+)/, CLASS:/^\.((?:\\.|[\w-]|[^\x00-\xa0])+)/, TAG:/^((?:\\.|[\w-]|[^\x00-\xa0])+|[*])/, ATTR:/^\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\]/, PSEUDO:/^:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/,
+    CHILD:/^:(only|first|last|nth|nth-last)-(child|of-type)(?:\([\x20\t\r\n\f]*(even|odd|(([+-]|)(\d*)n|)[\x20\t\r\n\f]*(?:([+-]|)[\x20\t\r\n\f]*(\d+)|))[\x20\t\r\n\f]*\)|)/i, bool:/^(?:checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$/i, needsContext:/^[\x20\t\r\n\f]*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\([\x20\t\r\n\f]*((?:-\d)?\d*)[\x20\t\r\n\f]*\)|)(?=[^-]|$)/i}, ra = /^(?:input|select|textarea|button)$/i, sa =
     /^h\d$/i, V = /^[^{]+\{\s*\[native \w/, wa = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/, ja = /[+~]/, xa = /'|\\/g, ea = RegExp("\\\\([\\da-f]{1,6}[\\x20\\t\\r\\n\\f]?|([\\x20\\t\\r\\n\\f])|.)", "ig"), fa = function(a, f, b) {
       a = "0x" + f - 65536;
       return a !== a || b ? f : 0 > a ? String.fromCharCode(a + 65536) : String.fromCharCode(a >> 10 | 55296, a & 1023 | 56320);
@@ -2621,7 +2621,7 @@ $jscomp.string.endsWith$install = function() {
       }, n.elem = a);
       b = (b || "").match(K) || [""];
       for (k = b.length;k--;) {
-        e = Kb.exec(b[k]) || [], v = q = e[1], u = (e[2] || "").split(".").sort(), v && (e = d.event.special[v] || {}, v = (l ? e.delegateType : e.bindType) || v, e = d.event.special[v] || {}, q = d.extend({type:v, origType:q, data:g, handler:c, guid:c.guid, selector:l, needsContext:l && d.expr.match.needsContext.test(l), namespace:u.join(".")}, p), (t = h[v]) || (t = h[v] = [], t.delegateCount = 0, e.setup && !1 !== e.setup.call(a, g, u, n) || (a.addEventListener ? a.addEventListener(v, n, !1) : 
+        e = Kb.exec(b[k]) || [], v = q = e[1], u = (e[2] || "").split(".").sort(), v && (e = d.event.special[v] || {}, v = (l ? e.delegateType : e.bindType) || v, e = d.event.special[v] || {}, q = d.extend({type:v, origType:q, data:g, handler:c, guid:c.guid, selector:l, needsContext:l && d.expr.match.needsContext.test(l), namespace:u.join(".")}, p), (t = h[v]) || (t = h[v] = [], t.delegateCount = 0, e.setup && !1 !== e.setup.call(a, g, u, n) || (a.addEventListener ? a.addEventListener(v, n, !1) :
         a.attachEvent && a.attachEvent("on" + v, n))), e.add && (e.add.call(a, q), q.handler.guid || (q.handler.guid = c.guid)), l ? t.splice(t.delegateCount++, 0, q) : t.push(q), d.event.global[v] = !0);
       }
       a = null;
@@ -2652,7 +2652,7 @@ $jscomp.string.endsWith$install = function() {
     var l, e, h, k, n, p, q = [c || w], t = la.call(a, "type") ? a.type : a;
     n = la.call(a, "namespace") ? a.namespace.split(".") : [];
     h = l = c = c || w;
-    if (3 !== c.nodeType && 8 !== c.nodeType && !Jb.test(t + d.event.triggered) && (-1 < t.indexOf(".") && (n = t.split("."), t = n.shift(), n.sort()), e = 0 > t.indexOf(":") && "on" + t, a = a[d.expando] ? a : new d.Event(t, "object" === typeof a && a), a.isTrigger = g ? 2 : 3, a.namespace = n.join("."), a.rnamespace = a.namespace ? new RegExp("(^|\\.)" + n.join("\\.(?:.*\\.|)") + "(\\.|$)") : null, a.result = void 0, a.target || (a.target = c), f = null == f ? [a] : d.makeArray(f, [a]), n = d.event.special[t] || 
+    if (3 !== c.nodeType && 8 !== c.nodeType && !Jb.test(t + d.event.triggered) && (-1 < t.indexOf(".") && (n = t.split("."), t = n.shift(), n.sort()), e = 0 > t.indexOf(":") && "on" + t, a = a[d.expando] ? a : new d.Event(t, "object" === typeof a && a), a.isTrigger = g ? 2 : 3, a.namespace = n.join("."), a.rnamespace = a.namespace ? new RegExp("(^|\\.)" + n.join("\\.(?:.*\\.|)") + "(\\.|$)") : null, a.result = void 0, a.target || (a.target = c), f = null == f ? [a] : d.makeArray(f, [a]), n = d.event.special[t] ||
     {}, g || !n.trigger || !1 !== n.trigger.apply(c, f))) {
       if (!g && !n.noBubble && !d.isWindow(c)) {
         k = n.delegateType || t;
@@ -3050,7 +3050,7 @@ $jscomp.string.endsWith$install = function() {
       p.style.cssText = "-webkit-box-sizing:border-box;box-sizing:border-box;position:relative;display:block;margin:auto;border:1px;padding:1px;top:1%;width:50%";
       f = g = k = !1;
       c = h = !0;
-      b.getComputedStyle && (a = b.getComputedStyle(p), f = "1%" !== (a || {}).top, k = "2px" === (a || {}).marginLeft, g = "4px" === (a || {width:"4px"}).width, p.style.marginRight = "50%", c = "4px" === (a || {marginRight:"4px"}).marginRight, a = p.appendChild(w.createElement("div")), a.style.cssText = p.style.cssText = "-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;display:block;margin:0;border:0;padding:0", a.style.marginRight = a.style.width = "0", p.style.width = 
+      b.getComputedStyle && (a = b.getComputedStyle(p), f = "1%" !== (a || {}).top, k = "2px" === (a || {}).marginLeft, g = "4px" === (a || {width:"4px"}).width, p.style.marginRight = "50%", c = "4px" === (a || {marginRight:"4px"}).marginRight, a = p.appendChild(w.createElement("div")), a.style.cssText = p.style.cssText = "-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;display:block;margin:0;border:0;padding:0", a.style.marginRight = a.style.width = "0", p.style.width =
       "1px", h = !parseFloat((b.getComputedStyle(a) || {}).marginRight), p.removeChild(a));
       p.style.display = "none";
       if (e = 0 === p.getClientRects().length) {
@@ -3061,7 +3061,7 @@ $jscomp.string.endsWith$install = function() {
       d.removeChild(n);
     }
     var f, c, g, e, h, k, n = w.createElement("div"), p = w.createElement("div");
-    p.style && (p.style.cssText = "float:left;opacity:.5", u.opacity = "0.5" === p.style.opacity, u.cssFloat = !!p.style.cssFloat, p.style.backgroundClip = "content-box", p.cloneNode(!0).style.backgroundClip = "", u.clearCloneStyle = "content-box" === p.style.backgroundClip, n = w.createElement("div"), n.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;padding:0;margin-top:1px;position:absolute", p.innerHTML = "", n.appendChild(p), u.boxSizing = "" === p.style.boxSizing || "" === p.style.MozBoxSizing || 
+    p.style && (p.style.cssText = "float:left;opacity:.5", u.opacity = "0.5" === p.style.opacity, u.cssFloat = !!p.style.cssFloat, p.style.backgroundClip = "content-box", p.cloneNode(!0).style.backgroundClip = "", u.clearCloneStyle = "content-box" === p.style.backgroundClip, n = w.createElement("div"), n.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;padding:0;margin-top:1px;position:absolute", p.innerHTML = "", n.appendChild(p), u.boxSizing = "" === p.style.boxSizing || "" === p.style.MozBoxSizing ||
     "" === p.style.WebkitBoxSizing, d.extend(u, {reliableHiddenOffsets:function() {
       null == f && a();
       return e;
@@ -3741,7 +3741,7 @@ $jscomp.string.endsWith$install = function() {
     return c;
   };
   var Ic = /#.*$/, Qb = /([?&])_=[^&]*/, Jc = /^(.*?):[ \t]*([^\r\n]*)\r?$/mg, Kc = /^(?:GET|HEAD)$/, Lc = /^\/\//, Rb = /^([\w.+-]+:)(?:\/\/(?:[^\/?#]*@|)([^\/?#:]*)(?::(\d+)|)|)/, Sb = {}, Oa = {}, Tb = "*/".concat("*"), cb = Gc.href, X = Rb.exec(cb.toLowerCase()) || [];
-  d.extend({active:0, lastModified:{}, etag:{}, ajaxSettings:{url:cb, type:"GET", isLocal:/^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(X[1]), global:!0, processData:!0, async:!0, contentType:"application/x-www-form-urlencoded; charset=UTF-8", accepts:{"*":Tb, text:"text/plain", html:"text/html", xml:"application/xml, text/xml", json:"application/json, text/javascript"}, contents:{xml:/\bxml\b/, html:/\bhtml/, json:/\bjson\b/}, responseFields:{xml:"responseXML", text:"responseText", 
+  d.extend({active:0, lastModified:{}, etag:{}, ajaxSettings:{url:cb, type:"GET", isLocal:/^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(X[1]), global:!0, processData:!0, async:!0, contentType:"application/x-www-form-urlencoded; charset=UTF-8", accepts:{"*":Tb, text:"text/plain", html:"text/html", xml:"application/xml, text/xml", json:"application/json, text/javascript"}, contents:{xml:/\bxml\b/, html:/\bhtml/, json:/\bjson\b/}, responseFields:{xml:"responseXML", text:"responseText",
   json:"responseJSON"}, converters:{"* text":String, "text html":!0, "text json":d.parseJSON, "text xml":d.parseXML}, flatOptions:{url:!0, context:!0}}, ajaxSetup:function(a, b) {
     return b ? Pa(Pa(a, d.ajaxSettings), b) : Pa(d.ajaxSettings, a);
   }, ajaxPrefilter:Ab(Sb), ajaxTransport:Ab(Oa), ajax:function(a, c) {
@@ -5297,7 +5297,7 @@ $(function() {
   window.matchMedia("only screen and (max-width: 760px)").matches && $(".rates").attr("href", "#rates");
 });
 $(function() {
-  $.getJSON("http://api.fixer.io/latest?base=GBP&symbols=USD&callback=?").done(function(b) {
+  $.getJSON("https://api.fixer.io/latest?base=GBP&symbols=USD&callback=?").done(function(b) {
     $("#usd-rate").text((parseInt($("#gbp-rate").text()) * b.rates.USD).toFixed(2));
   });
 });
