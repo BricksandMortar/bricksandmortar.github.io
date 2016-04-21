@@ -1,0 +1,314 @@
+@import "/bootstrap-3.3.6/bootstrap.less";
+
+p, h1, h2, h3, h4, h5, h6, a:not([href]), a:not([href]):hover {
+  color: @text;
+  text-decoration: none;
+}
+
+p:not(.lead):not(.license){
+  font-size: floor((@font-size-base * 1.15));
+}
+
+a {
+  color: @link;
+  &:hover {
+    color: @link;
+  }
+}
+
+.lead {
+  margin-bottom: 0px;
+}
+
+.bs-docs-masthead {
+  padding-top:50px;
+  padding-bottom:40px;
+  .btn:hover {
+    color: #E8773E;
+  }
+}
+.bs-docs-header {
+  h1, p {
+    margin-right:0px;
+  }
+}
+.bs-docs-sidebar .nav > li > a {
+  font-size:15px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+  font-size:14px;
+}
+.back-top-top {
+  font-size:13px;
+}
+.bs-docs-footer {
+  p {
+    color: #99979c;
+  }
+  a:hover {
+    color: @text-contrast;
+  }
+}
+
+.rate {
+  border-radius: 10px;
+  background-color: @red;
+  font-size: floor(@font-size-large)-1;
+}
+
+.reason {
+  margin-bottom: 30px;
+}
+
+.do {
+  margin-bottom: 20px;
+  .fa {
+    color: @orange;
+  }
+}
+
+
+.landing .input-group-addon .fa{
+    color: #999;
+}
+
+.versionlog {
+  li {
+    list-style: none;
+  }
+}
+
+.about-container {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 3em;
+  padding-top: 20px;
+}
+
+.btn-primary {
+  background-color: @red !important;
+  border-color: @red-darker !important;
+  outline-color: @red-darker !important;
+  color: #fff !important;
+
+  &:hover, &:focus, &:active {
+    background-color: @red-darker !important;
+    border-color: darken(@red-darker, 5%) !important;
+    outline-color: darken(@red-darker, 5%) !important;
+  }
+}
+
+.btn-outline-orange {
+  color: @text;
+  background-color: transparent;
+  border-color: @orange-darker !important;
+  margin: 5px 0 0  0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: @text-contrast !important;
+    background-color: @orange-darker !important;
+    border-color: darken(@orange, 5%) !important;
+    i {
+      color: @text-contrast;
+    }
+  }
+}
+
+.btn-outline-red {
+  .btn-outline-orange;
+  border-color: @red-darker !important;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @red-darker !important;
+    border-color: darken(@red-darker, 5%) !important;
+  }
+}
+
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  &:hover,&:focus,&:active {
+    color: @orange !important;
+    text-shadow: none;
+    background-color: #fff !important;
+    border-color: #fff !important;
+  }
+}
+
+
+.form-horizontal {
+  margin: 20px 0 30px 0;
+}
+
+
+.gravatar {
+  margin-bottom: 10px;
+
+}
+
+
+.fa-twitter {
+  color: #2C77BA !important;
+}
+
+.twitter {
+  padding-bottom: @padding-small-vertical;
+}
+
+.plugin-section {
+  margin-top: 20px;
+  .text-center;
+  .center-block;
+}
+
+.back-arrow {
+  color: black;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    color: #555;
+    text-decoration: none;
+  }
+  i {
+    position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 100;
+}
+.fa {
+  color: @orange;
+  border-color: @orange-darker;
+
+  &:hover, &:focus, &:active {
+    color: @orange-darker;
+    border-color: darken(@orange-darker, 5%);
+  }
+}
+}
+
+
+.mobile-banner {
+  background-color: @orange;
+    padding: 10px 0px 5px 10px;
+    margin-bottom: 10px;
+    p {
+        color: @text-contrast;
+        padding: 0 10px 0 10px;
+      }
+}
+
+.mobile-banner-alt {
+  .mobile-banner;
+  background-color: @red;
+}
+
+.btn-default {
+  margin: 5px 0 0  0;
+}
+
+.btn-mobile-primary {
+  .btn-primary;
+  color: @text-contrast !important;
+  background-color: @orange !important;
+  border-color: @orange-darker !important;
+  outline-color: @orange-darker !important;
+  &:hover, &:active, &:focus {
+    background-color: @orange-darker !important;
+    border-color: darken(@orange-darker, 5%) !important;
+    outline-color: darken(@orange-darker, 5%) !important;
+  }
+}
+
+.btn-mobile-secondary {
+  .btn-primary;
+    // background-color: @red !important;
+    // border-color: @red-darker !important;
+    // outline-color: @red-darker !important;
+    // &:hover, &:active, &:focus {
+    //   background-color: @red-darker !important;
+    //   border-color: darken(@red-darker, 5%) !important;
+    //   outline-color: darken(@red-darker, 5%) !important;
+    // }
+}
+
+.btn-mobile-white {
+  .btn-primary;
+  color: @text-contrast !important;
+  background-color: white !important;
+  border-color: darken(white, 5%) !important;
+  outline-color: darken(white, 5%) !important;
+  &:hover, &:active, &:focus {
+    background-color: darken(white, 5%) !important;
+    border-color: darken(darken(white, 5%), 5%) !important;
+    outline-color: darken(darken(white, 5%), 5%) !important;
+  }
+}
+
+.versionlog {
+  padding-bottom: 20px;
+  li {
+    list-style: none;
+      font-size: floor((@font-size-base * 1.15));
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .landing {
+    p {
+      margin-left: 4em;
+      margin-right: 4em;
+      padding-bottom: @padding-small-vertical;
+    }
+  }
+
+  .btn-mobile-primary {
+    .btn-outline-orange;
+  }
+
+  .btn-mobile-secondary {
+    .btn-outline-red;
+  }
+
+  .buttons {
+    margin-top: 10px;
+  }
+
+  .mobile-banner {
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 0;
+    p {
+      color: @text;
+    }
+  }
+
+  .mobile-banner-alt {
+    .mobile-banner;
+  }
+
+  .bio {
+    .text-right;
+  }
+
+  .gravatar {
+    margin: 0px 0px 0px 0px;
+    .pull-left;
+  }
+  .twitter{
+    .text-left;
+    padding-top: @padding-small-vertical;
+    .fa-twitter {
+      color: #2C77BA !important;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+ }

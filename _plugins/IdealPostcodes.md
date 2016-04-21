@@ -6,4 +6,5 @@ description: Don't get stuck with an inaccurate Bing location service! Ideal Pos
 repo: IdealPostcodes
 icon:
 rockstore:
+documentation: true
 ---
