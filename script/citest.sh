@@ -2,4 +2,4 @@
 set -e # halt script on error
 
 #Runs htmlproofer, build fails if proofer fails
-bundle exec htmlproofer ./_site --allow-hash-href --enforce_https --check_favicon --assume_extension
+bundle exec htmlproofer ./_site --allow-hash-href --enforce-https --check-favicon --assume-extension
