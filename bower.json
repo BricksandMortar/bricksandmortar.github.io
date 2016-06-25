@@ -1,0 +1,25 @@
+{
+  "name": "bricksandmortar.github.io",
+  "description": "Bricks and Mortar Studio Site",
+  "main": "index.js",
+  "authors": [
+    "Arran France <arranf@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://bricksandmortarstudio.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.0.0",
+    "font-awesome": "latest",
+    "moment": "latest",
+    "showdown": "latest",
+    "jquery.scrollTo": "^2.1.2"
+  }
+}
