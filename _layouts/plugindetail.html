@@ -85,17 +85,20 @@
   <footer class="bs-docs-footer" role="contentinfo">
     <div class="container">
       <ul class="bs-docs-footer-links muted">
-      {% for l in site.footerLinks %}
-        <li><a href="{{l.url}}">{{l.title}}</a></li>
-      {% endfor %}
-      {% assign sorted_pages = site.pages | sort:"name" %}
-      {% for p in sorted_pages %}
-        {% if p.hide != true and p.title !=  %}
-          <li {% if page.title == p.title %}class="active"{% endif %}>
-            <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
+        {% for l in site.footerLinks %}
+          <li><a href="{{l.url}}">{{l.title}}</a></li>
+        {% endfor %}
+        <li {% if page.title == p.title %}class="active"{% endif %}>
+          <a href="{{site.github.url}}">Home</a>
+        </li>
+        {% assign sorted_pages = site.pages | sort:"name" %}
+        {% for p in sorted_pages %}
+          {% if p.hide != true and p.title != 'Home' %}
+            <li {% if page.title == p.title %}class="active"{% endif %}>
+              <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
       <p class="license">This site is <a href="https://github.com/BricksandMortar/bricksandmortar.github.io">open source</a> and is licensed under <a href="{{site.licenseUrl}}" target="_blank">{{site.license}}</a>.</p>
     </div>
