@@ -57,9 +57,9 @@ gulp.task('images', function(cb) {
 
 gulp.task('docs-css', function(cb) {
     pump([
-        gulp.src(config.src+'css'),
+        gulp.src(config.src+'css/docs.css'),
         cleanCSS({compatibility: 'ie8'}),
-        rename('docs.min.css'),
+        rename("docs.min.css"),
         gulp.dest(config.dist+'css')
     ],
 cb);
