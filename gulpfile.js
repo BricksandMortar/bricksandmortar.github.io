@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     pump = require('pump'),
-    cleanCSS = require('gulp-clean-css');
+    cleanCSS = require('gulp-clean-css'),
+    rename = require('gulp-rename');
 
 var config = {
     src: "./assets/src/",
@@ -58,6 +59,7 @@ gulp.task('docs-css', function(cb) {
     pump([
         gulp.src(config.src+'css'),
         cleanCSS({compatibility: 'ie8'}),
+        rename('docs.min.css'),
         gulp.dest(config.dist+'css')
     ],
 cb);
