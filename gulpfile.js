@@ -2,14 +2,15 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    pump = require('pump');
+    pump = require('pump'),
+    cleanCSS = require('gulp-clean-css');
 
 var config = {
     src: "./assets/src/",
     dist: "./assets/dist/"
 };
 
-gulp.task('default', ['minify-markdown', 'minify-main', 'less', 'images', 'fontawesome-css', 'fontawesome-fonts']);
+gulp.task('default', ['minify-markdown', 'minify-main', 'less','docs-css', 'images', 'fontawesome-css', 'fontawesome-fonts']);
 
 //Compile LESS and minify JS
 gulp.task('minify-markdown', function(cb) {
@@ -52,6 +53,14 @@ gulp.task('images', function(cb) {
         ],
         cb);
 });
+
+gulp.task('docs-css', funtion(cb)){
+    pump([
+        gulp.src(config.src+'css'),
+        cleanCSS({compatibility: 'ie8'}),
+        gulp.dest(config.dist+'css')
+    ])
+}
 
 //Copy FontAwesome
 gulp.task('fontawesome-css', function(cb) {
