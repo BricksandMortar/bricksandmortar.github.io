@@ -6,5 +6,5 @@ description: SendGrid provides reliable email delivery across the web. Take adva
 repo: SendGrid
 icon:
 rockstore:
-documentation:
+documentation: true
 ---
