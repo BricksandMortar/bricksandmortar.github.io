@@ -14,8 +14,7 @@ gulp.task('default', ['minify-markdown', 'minify-main', 'less', 'images', 'fonta
 //Compile LESS and minify JS
 gulp.task('minify-markdown', function(cb) {
     pump([
-            gulp.src(['./bower_components/moment/min/moment.min.js', './bower_components/showdown/dist/showdown.min.js'
-        ]),
+            gulp.src(['./bower_components/moment/min/moment.min.js', './bower_components/showdown/dist/showdown.min.js']),
             concat('moment_showdown.min.js'),
             uglify(),
             gulp.dest(config.dist + 'js')
@@ -26,9 +25,7 @@ gulp.task('minify-markdown', function(cb) {
 
 gulp.task('minify-main', function(cb) {
     pump([
-            gulp.src(['./bower_components/jquery/dist/jquery.min.js', config.src + '/js/bootstrap.min.js', config.src + '/js/docs.min.js'
-            // ,  './bower_components/jquery.scrollTo/jquery.scrollTo.js'
-        ]),
+            gulp.src(['./bower_components/jquery/dist/jquery.min.js', config.src + '/js/bootstrap.min.js', config.src + '/js/docs.min.js', './bower_components/jquery.scrollTo/jquery.scrollTo.js']),
             concat('main.min.js'),
             uglify(),
             gulp.dest(config.dist + 'js')
