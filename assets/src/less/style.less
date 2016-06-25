@@ -1,4 +1,19 @@
-@import "/bootstrap-3.3.6/bootstrap.less";
+@import "./bootstrap-3.3.6/bootstrap.less";
+
+@red: #E95F40;
+@red-darker : darken(@red, 5%);
+
+@orange: #E99F40;
+@orange-darker: darken(@orange, 5%);
+
+@text: #333;
+@text-contrast: #fff;
+
+@link: #407ce9;
+
+.cover-down {
+    .hidden;
+}
 
 p, h1, h2, h3, h4, h5, h6, a:not([href]), a:not([href]):hover {
   color: @text;
@@ -48,10 +63,6 @@ a {
   a:hover {
     color: @text-contrast;
   }
-}
-
-.cover {
-    height: 100vh;
 }
 
 .rate {
@@ -315,4 +326,12 @@ a {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
+    .cover {
+        height: 100vh;
+    }
+
+    .cover-down {
+        margin-top: 0.5em;
+        display: block !important;
+    }
  }

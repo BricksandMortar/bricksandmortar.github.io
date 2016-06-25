@@ -21,9 +21,10 @@
 
   <link rel="stylesheet" href="{{site.github.url}}/assets/dist/css/font-awesome.min.css">
   <link href="{{site.github.url}}/assets/dist/css/docs.min.css" rel="stylesheet">
-  <link href="{{site.github.url}}/assets/css/dist/style.css" rel="stylesheet">
+  <link href="{{site.github.url}}/assets/dist/css/style.css" rel="stylesheet">
 
-  <script src="{{site.github.url}}/assets/dist/js/default.js"></script>
+  <script src="{{site.github.url}}/assets/dist/js/main.min.js"></script>
+  <script src="{{site.github.url}}/jquery.scrollTo.js"></script>
 
 </head>
 
@@ -31,7 +32,7 @@
 
   <!-- Header
   =========================================== -->
-  <div class="bs-docs-masthead home" id="content">
+  <div class="bs-docs-masthead home cover" id="content">
     <div class="container">
       <h1 class="home-title">{{site.name}}</h1>
 
@@ -39,6 +40,7 @@
       {% if page.description %}
       <p class="lead">{{page.description}}</p>
       {% endif %}
+
       {% if page.catch %}
       <p class="lead final">{{page.catch}}</p>
       {% endif %}

@@ -35,7 +35,7 @@ jekyll-mentions:
 url: https://www.bricksandmortarstudio.com   # with the https protocol
 enforce_ssl: www.bricksandmortarstudio.com   # without any protocol
 
-exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile']
+exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile', 'gulpfile.js', 'assets/src' ,'/node_modules', '/bower_components', 'package.json']
 
 gems:
   - jekyll-mentions
