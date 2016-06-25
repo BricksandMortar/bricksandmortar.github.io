@@ -25,7 +25,7 @@ gulp.task('minify-markdown', function(cb) {
 
 gulp.task('minify-main', function(cb) {
     pump([
-            gulp.src(['./bower_components/jquery/dist/jquery.min.js', config.src + '/js/bootstrap.min.js', config.src + '/js/docs.min.js', './bower_components/jquery.scrollTo/jquery.scrollTo.js']),
+            gulp.src(['./bower_components/jquery/dist/jquery.min.js', config.src + '/js/bootstrap.min.js', './bower_components/jquery.scrollTo/jquery.scrollTo.js', config.src + '/js/docs.min.js']),
             concat('main.min.js'),
             uglify(),
             gulp.dest(config.dist + 'js')
