@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-# clear and re-create the _site directory
 ./script/cibuild.sh
 ./script/citest.sh
 
