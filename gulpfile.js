@@ -4,14 +4,16 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     pump = require('pump'),
     cleanCSS = require('gulp-clean-css'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    watch = require('gulp-watch'),
+        sequence = require('gulp-watch-sequence');
 
 var config = {
     src: "./assets/src/",
     dist: "./assets/dist/"
 };
 
-gulp.task('default', ['minify-markdown', 'minify-main', 'less','docs-css', 'images', 'fontawesome-css', 'fontawesome-fonts']);
+gulp.task('default', ['minify-markdown', 'minify-main', 'lessify','docs-css', 'images', 'fontawesome-css', 'fontawesome-fonts']);
 
 //Compile LESS and minify JS
 gulp.task('minify-markdown', function(cb) {
@@ -36,10 +38,9 @@ gulp.task('minify-main', function(cb) {
     );
 });
 
-gulp.task('less', function(cb) {
-    var less_source = config.src + 'less/';
+gulp.task('lessify', function(cb) {
     pump([
-            gulp.src(less_source + 'style.less'),
+            gulp.src( config.src + 'less/style.less'),
             less({
                 paths: ['./assets/src/less/bootstrap-3.3.6/']
             }),
@@ -63,6 +64,20 @@ gulp.task('docs-css', function(cb) {
         gulp.dest(config.dist+'css')
     ],
 cb);
+});
+
+gulp.task('watch', function () {
+  var queue = sequence(300);
+
+  watch(config.src+'/**/*.js', {
+    name      : 'JS',
+    emitOnGlob: false
+}, queue.getHandler('minify-main'));
+
+  watch(config.src+'less/**/*.less', {
+    name      : 'CSS',
+    emitOnGlob: false
+}, queue.getHandler('lessify'));
 });
 
 //Copy FontAwesome
