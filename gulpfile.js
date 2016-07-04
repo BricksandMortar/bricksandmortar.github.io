@@ -56,7 +56,7 @@ gulp.task('images', function(cb) {
         cb);
 });
 
-gulp.task('docs-css', function(cb) {
+gulp.task('docs-css', ['lessify'], function(cb) {
     pump([
         gulp.src(config.src+'css/docs.css'),
         cleanCSS({compatibility: 'ie8'}),
