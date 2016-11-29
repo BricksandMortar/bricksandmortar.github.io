@@ -83,9 +83,15 @@
         {% for l in site.footerLinks %}
           <li><a href="{{l.url}}">{{l.title}}</a></li>
         {% endfor %}
-        <li {% if page.title == p.title %}class="active"{% endif %}>
-          <a href="{{site.github.url}}">Home</a>
-        </li>
+        {% if site.page.size > 1 or site.footerLinks.size > 1 %}
+            {% if page.title == p.title %}
+                <li class="active">
+            {% else %}
+                <li>
+            {% endif %}
+              <a href="{{site.github.url}}">Home</a>
+            </li>
+        {% endif %}
         {% assign sorted_pages = site.pages | sort:"name" %}
         {% for p in sorted_pages %}
           {% if p.hide != true and p.title != 'Home' %}
