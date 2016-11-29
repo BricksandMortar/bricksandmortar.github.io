@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/BricksandMortar/bricksandmortar.github.io#readme",
   "devDependencies": {
-    "bower": "^1.7.9",
+    "bower": "^1.8.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.10",
     "gulp-concat": "^2.6.0",
