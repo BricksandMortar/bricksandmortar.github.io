@@ -2,4 +2,4 @@
 set -e # halt script on error
 
 #Runs htmlproofer, build fails if proofer fails
-bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --assume-extension
+bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --assume-extension --url-ignore "https://www.apache.org/licenses/LICENSE-2.0.html"
