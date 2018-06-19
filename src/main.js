@@ -1,7 +1,5 @@
 // JS
-import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
+require('jquery');
 require('jquery.scrollto');
 require('bootstrap/dist/js/npm');
 require('./assets/js/docs');

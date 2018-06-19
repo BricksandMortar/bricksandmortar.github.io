@@ -18,7 +18,11 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'bundle.min.css'
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
     ],
     entry: './src/main.js',
     output: {
