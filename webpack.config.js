@@ -2,13 +2,14 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
     optimization: {
         minimizer: [
           new UglifyJsPlugin({
             cache: true,
-            parallel: true,
+            parallel: false,
             sourceMap: false // set to true if you want JS source maps
           }),
           new OptimizeCSSAssetsPlugin({})
