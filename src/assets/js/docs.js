@@ -1,5 +1,3 @@
-require('jquery');
-
 function toggleForm() {
     var form = $('#contact_form');
     var state = form.is(":visible");
@@ -12,6 +10,8 @@ function toggleForm() {
         $('#formButton').text("Nevermind");
     }
 };
+
+window.toggleForm = toggleForm;
 
 function mobileRates() {
     var isMobile = window.matchMedia("only screen and (max-width: 760px)");
@@ -35,6 +35,12 @@ $(function() {
             $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.rates.GBP).toFixed(2))
         });
 });
+
+jQuery( document ).ready(function() {
+    console.log('Confirm');
+    mobileRates();
+    setupCoverChevron();
+  });
 
 jQuery(function($) {
     $("#contact_form").submit(function() {
