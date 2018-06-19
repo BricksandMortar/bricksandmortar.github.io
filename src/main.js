@@ -1,6 +1,6 @@
 // JS
-require('jquery.scrollto');
 require('jquery');
+require('jquery.scrollto');
 require('bootstrap/dist/js/npm');
 require('./assets/js/docs');
 

@@ -1,3 +1,5 @@
+require('jquery');
+
 function toggleForm() {
     var form = $('#contact_form');
     var state = form.is(":visible");
