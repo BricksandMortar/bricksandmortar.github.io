@@ -1,5 +1,5 @@
 /_site
 Gemfile.lock
-node_modules
+/node_modules
 bower_components
-assets/dist
+dist/

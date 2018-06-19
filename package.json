@@ -4,7 +4,7 @@
   "description": "bricksandmortarstudio.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,15 +17,20 @@
   },
   "homepage": "https://github.com/BricksandMortar/bricksandmortar.github.io#readme",
   "devDependencies": {
-    "bower": "^1.8.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-concat": "^2.6.0",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.4",
-    "gulp-watch": "^4.3.8",
-    "gulp-watch-sequence": "^1.0.0",
-    "pump": "^1.0.1"
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "font-awesome": "^4.7.0",
+    "jquery": "2.1.0",
+    "jquery.scrollto": "^2.1.2",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
   }
 }
