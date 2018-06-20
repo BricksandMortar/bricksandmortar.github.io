@@ -21,12 +21,12 @@ function mobileRates() {
 };
 
 function setupCoverChevron() {
-    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
-    if (!(isMobile.matches)) {
-        $('#chevron-down').click(function () {
-            $(window).scrollTo(document.getElementById("content-top"), 200);
-        });
-    }
+    $('#chevron-down').click(function () {
+        var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+        if (!(isMobile.matches)) {
+                $(window).scrollTo(document.getElementById("content-top"), 200);
+        }
+    });
 };
 
 $(function() {
