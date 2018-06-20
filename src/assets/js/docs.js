@@ -30,9 +30,9 @@ function setupCoverChevron() {
 };
 
 $(function() {
-    $.getJSON('https://free.currencyconverterapi.com/api/v5/convert?q=GBP_USD&compact=ultra')
+    $.getJSON('https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra')
         .done(function(data) {
-            $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.GBP_USD).toFixed(2))
+            $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.USD_GBP).toFixed(2))
         });
 });
 
