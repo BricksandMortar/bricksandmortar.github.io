@@ -30,9 +30,9 @@ function setupCoverChevron() {
 };
 
 $(function() {
-    $.getJSON('https://api.fixer.io/latest?access_key=8d0fe2364123dcd52266481f656e4b83base=USD&symbols=GBP&callback=?')
+    $.getJSON('https://free.currencyconverterapi.com/api/v5/convert?q=GBP_USD&compact=ultra')
         .done(function(data) {
-            $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.rates.GBP).toFixed(2))
+            $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.GBP_USD).toFixed(2))
         });
 });
 
