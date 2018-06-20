@@ -30,14 +30,13 @@ function setupCoverChevron() {
 };
 
 $(function() {
-    $.getJSON('https://api.fixer.io/latest?base=USD&symbols=GBP&callback=?')
+    $.getJSON('https://api.fixer.io/latest?access_key=8d0fe2364123dcd52266481f656e4b83base=USD&symbols=GBP&callback=?')
         .done(function(data) {
             $('#gbp-rate').text((parseInt($('#usd-rate').text()) * data.rates.GBP).toFixed(2))
         });
 });
 
 jQuery( document ).ready(function() {
-    console.log('Confirm');
     mobileRates();
     setupCoverChevron();
   });
